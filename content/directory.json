@@ -1,0 +1,243 @@
+{
+  "items": [
+    {
+      "id": "adult probation",
+      "title": "Adult probation",
+      "phone": "(706) 376-7161"
+    },
+    {
+      "id": "ems",
+      "title": "Ambulance Service / EMS",
+      "url": "/ems.html",
+      "phone": "(706) 376-3930"
+    },
+    {
+      "id": "boc",
+      "title": "Board of Commissioners",
+      "url": "/commissioners.html",
+      "phone": "(706) 376-2404"
+    },
+	{
+		"id": "elections",
+		"title": "Board of Elections and Registration",
+    "url": "/elections.html",
+		"phone": "(706) 376-8911"
+	},
+  {
+    "id": "chamber",
+    "title": "Chamber of Commerce",
+    "url": "https://www.hart-chamber.org",
+    "phone": "(706) 376-8590",
+    "fax": "(706) 376-5177"
+  },
+  {
+    "id": "city hall",
+    "title": "City of Hartwell",
+    "url": "https://www.hartwellga.gov",
+    "phone": "(706) 375-4756",
+    "fax": "(706) 376-6263"
+  },
+  {
+    "id": "clerk",
+    "title": "Clerk of Court",
+    "url": "https://hartgaclerkofcourt.com",
+    "phone": "(706) 376-7189"
+  },
+  {
+    "id": "coroner",
+    "title": "Coroner",
+    "name": "Mike Adams",
+    "email": "coroner@hartcountyga.gov"
+  },
+  {
+    "id": "county attorney",
+    "title": "County Attorney",
+    "phone": "(706) 376-5418",
+    "fax": "(706) 376-5416"
+  },
+  {
+    "id": "dfacs",
+    "title": "DFACS",
+    "url": "https://dfcs.georgia.gov/contacts/hart-county",
+    "phone": "(706) 856-2740",
+    "fax": "(706) 856-2792"
+  },
+  {
+    "id": "district attorney",
+    "title": "District Attorney",
+    "url": "https://www.districtattorneynjc.org",
+    "phone": "(706) 376-3128",
+    "fax": "(706) 376-1620"
+  },
+  {
+    "id": "ema",
+    "title": "Hart County EMA",
+    "url": "/ema.html",
+    "phone": "(706) 376-3930",
+    "fax": "(706) 856-5316"
+  },
+  {
+    "id": "911",
+    "title": "Hart County E-911",
+    "url": "/e911.html",
+    "phone": "(706) 376-3930",
+    "fax": "(706) 856-5316"
+  },
+  {
+    "id": "permit",
+    "title": "Permitting/E-911 Addressing",
+    "url": "permit.html",
+    "phone": "(706) 376-1468",
+    "fax": "(706) 856-5370",
+    "email": "911addressing@hartcountyga.gov",
+    "description": "For permits inside the city limits, contact Hartwell City Hall"
+  },
+  {
+    "id": "fire",
+    "title": "Fire Department",
+    "url": "/firedepartment.html",
+    "phone": "(706) 856-5325"
+  },
+  {
+    "id": "adult learning",
+    "title": "Hart County Adult Learning Center",
+    "phone": ["(706) 856-2655", "(706) 376-5534"]  
+  },
+  {
+    "id": "rec dept",
+    "title": "Hart County Recreation Department",
+    "url": "/recdept.html",
+    "phone": "(706) 376-8528"
+  },
+  {
+    "id": "health dept",
+    "title": "Hart County Health Department",
+    "url": "/healthdept.html",
+    "phone": "(706) 376-5117",
+    "fax": "(706) 376-5011"
+  },
+  {
+    "id": "hydra",
+    "title": "HYDRA",
+    "url": "/hyrda.html",
+    "phone": "(706) 376-8899"
+  },
+  {
+    "id": "juvenile probation",
+    "title": "Juvenile Probation",
+    "phone": "(706) 856-2666"
+  },
+  {
+    "id": "library",
+    "title": "Hart County Library",
+    "url": "https://www.hartcountylibrary.com",
+    "phone": "(706) 376-4655"
+  },
+  {
+    "id": "magistrate",
+    "title": "Magistrate Court",
+    "url": "/magistrate.html",
+    "phone": "(706) 376-6817"
+  },
+  {
+    "id": "maintenance shop",
+    "title": "Maintenance Shop",
+    "url": "/maintenance/html",
+    "phone": ["(706) 376-7503", "(706) 376-3468"]
+  },
+  {
+    "id": "behavorial health",
+    "title": "Behavorial Health Center",
+    "url": "/behavorial.html",
+    "phone": "(706) 376-4002"
+  },
+  {
+    "id": "ninth district opportunity",
+    "title": "Ninth District Opportunity",
+    "url": "https://www.ndo.org/area/hart/",
+    "phone": "(706) 376-4150"
+  },
+  {
+    "id": "superior court",
+    "title": "Superior Court - Northern Judicial Circuit",
+    "url": "/superiorcourt.html",
+    "phone": "(706) 376-7151"
+  },
+  {
+    "id": "parole",
+    "title": "Parole Office",
+    "url": "https://njcpo.com",
+    "phone": "(706) 376-5420"
+  },
+  {
+    "id": "probate court",
+    "title": "Probate Court",
+    "url": "/probatecourt.html",
+    "phone": "(706) 376-2565"
+  },
+  {
+    "id": "public defender",
+    "title": "Public Defender",
+    "phone": "(706) 283-2921"
+  },
+  {
+    "id": "public works",
+    "title": "Public Works",
+    "url": "/publicworks.html",
+    "phone": "(706) 376-2024"
+  },
+  {
+    "id": "road department",
+    "title": "Road Department",
+    "url": "/roaddept.html",
+    "phone": "(706) 376-1468",
+    "email": "roads@hartcountyga.gov"
+  },
+  {
+    "id": "senior center",
+    "title": "Senior Center",
+    "url": "/seniorcenter.html",
+    "phone": "(706) 376-3975"
+  },
+  {
+    "id": "sheriff",
+    "title": "Sheriff's Department",
+    "url": "/sheriff.html",
+    "description": "For emergencies call 911",
+    "phone": "(706) 376-3114",
+    "fax": "(706) 376-2287"
+  },
+  {
+    "id": "solid waste",
+    "title": "Solid Waste Department",
+    "url": "/solidwaste.html",
+    "phone": "(706) 376-7333"
+  },
+  {
+    "id": "tax assessors",
+    "title": "Tax Assessor's Office",
+    "url": "/taxassessor.html",
+    "phone": "(706) 376-3997",
+    "fax": "(706) 376-0097"
+  },
+  {
+    "id": "tax commissioner",
+    "title": "Tax Commissioner",
+    "url": "https://www.hartcountypay.com",
+    "phone": "(706) 376-3944",
+    "fax": "(706) 376-6009"
+  },
+  {
+    "id": "whitworth",
+    "title": "Georgia Department of Corrections - Whitworth Detention Center",
+    "url": "https://gdc.georgia.gov/locations/whitworth-womens-facility",
+    "phone": "(706) 856-2601"
+  },
+  {
+    "id": "water and sewer",
+    "title": "Water and Sewer Authority",
+    "url": "https://www.hartwatersewer.com",
+    "phone": "(706) 377-4387"
+  }
+  ]
+}

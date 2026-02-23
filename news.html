@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hart County, GA (Demo) • News</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/alerts.css">
+
+<script defer src="js/alerts.js"></script>
+<script defer src="js/app.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+  <div class="navRow">
+    <a class="brand brandLink" href="index.html">
+      <div class="seal">
+        <img src="./assets/hart_seal.png" alt="Hart County, Georgia official seal">
+      </div>
+      <div class="brandText">
+        <div class="kicker">Hart County, Georgia</div>
+        <div class="title">PAGE TITLE HERE</div>
+      </div>
+    </a>
+
+    <!-- Desktop top navigation -->
+    <nav class="topNav" aria-label="Primary">
+      <a href="directory.html">Directory</a>
+      <a href="departments.html">Departments</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About</a>
+      <a href="paynes-creek.html">Paynes Creek</a>
+      <a href="news.html">News</a>
+      <a href="meetings.html">Meetings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="btn menuBtn" type="button"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            id="menuBtn">
+      Menu
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu panel (add right after header) -->
+<div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+<aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+  <div class="menuPanelHead">
+    <div class="menuPanelTitle">Menu</div>
+    <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+
+  <nav class="menuNav" aria-label="Primary mobile">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="departments.html">Departments</a>
+    <a href="commissioners.html">Commissioners</a>
+    <a href="employment.html">Employment</a>
+    <a href="about.html">About Hart County</a>
+    <a href="paynes-creek.html">Paynes Creek Campground</a>
+    <hr>
+    <a href="news.html">News</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+
+
+  <main id="main" class="container" tabindex="-1">
+    <section class="hero" aria-label="News tools">
+      <div class="heroTop">
+        <div>
+          <h1>County updates citizens actually read.</h1>
+          <p>
+            Filter by category, search by keyword, and keep urgent alerts visible.
+            (All content here is demo-only.)
+          </p>
+			<!-- ✅ ADD PAGE TOOLS RIGHT HERE -->
+      <div class="pageTools" aria-label="Page tools">
+        <label class="sr-only" for="siteSearch">Search</label>
+        <input id="siteSearch" class="field" type="text" placeholder="Search this page…" />
+
+        <div class="btnRow">
+          <a class="btn" href="directory.html">Find a Department</a>
+          <a class="btn" href="contact.html">Report an Issue</a>
+          <button class="btn ghost" type="button"
+            data-toast="Demo: Accessibility|Would open an accessibility help page.">
+            Accessibility
+          </button>
+        </div>
+      </div>
+      <!-- ✅ END PAGE TOOLS -->
+          <div class="filters" aria-label="Filters">
+            <button class="pill active" type="button" data-filter="All">All</button>
+            <button class="pill" type="button" data-filter="Press">Press</button>
+            <button class="pill" type="button" data-filter="Alert">Alerts</button>
+            <button class="pill" type="button" data-filter="Project">Projects</button>
+          </div>
+
+          <div style="margin-top:12px">
+            <label class="sr-only" for="newsSearch">Search news</label>
+            <input id="newsSearch" class="field" type="text" placeholder="Search news (demo)..." />
+          </div>
+        </div>
+
+        <div class="card" style="min-width:280px; max-width:360px" aria-label="Publishing controls demo">
+          <h2>Publishing Controls (Demo)</h2>
+          <p class="sub">What admins see in a future CMS panel</p>
+          <div class="btnRow">
+            <button class="btn primary" type="button" data-toast="Demo: New Post|Would open the post editor.">New Post</button>
+            <button class="btn" type="button" data-toast="Demo: Schedule|Would schedule a post.">Schedule</button>
+            <button class="btn" type="button" data-toast="Demo: Pin Alert|Would pin an alert to the top of Home.">Pin Alert</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:16px" aria-label="News posts">
+      <div class="cardHeader">
+        <div>
+          <h2>Posts</h2>
+          <p class="sub">Click Open to simulate full post view</p>
+        </div>
+      </div>
+
+      <div class="list" id="newsList" data-json="./content/news.json"></div>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 Hart County, Georgia (Demo Prototype)</div>
+      <div>For administration review only</div>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+      <div>
+        <div class="tTitle">Title</div>
+        <div class="tBody">Body</div>
+      </div>
+      <button id="toastClose" class="btn ghost" type="button" aria-label="Close message">Close</button>
+    </div>
+  </div>
+</body>
+</html>

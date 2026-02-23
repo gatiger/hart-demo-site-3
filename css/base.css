@@ -1,0 +1,914 @@
+:root{
+  /* Bright / airy civic palette */
+  --bg0:#f5f8fc;
+
+  --card:#ffffff;
+  --card2:#f0f4f9;
+
+  --text:#1b2a41;
+  --muted:#5f6f86;
+
+  --border:#dbe3ee;
+  --shadow: 0 12px 30px rgba(0,0,0,.06);
+
+  --radius: 16px;
+
+  /* Clean civic blue */
+  --accent:#1f4e8c;
+  --accent-dark:#163c6b;
+  --accent-soft:#e8f0fb;
+
+  --good:#15803d;
+  --warn:#b45309;
+  --bad:#b91c1c;
+
+  --max: 1200px;
+
+  /* Focus color (orange) */
+  --focus: #ff7a18;
+  --focus-soft: rgba(255,122,24,.25);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+}
+
+/* Links */
+a{ color: var(--accent); text-decoration:none; }
+a:hover{ text-decoration: underline; }
+
+/* Directory title links */
+.title-link{
+  color: inherit;          /* keeps it same as itemTitle */
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.title-link:hover{
+  text-decoration: underline;
+}
+
+/* Background photo */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  /* NOTE: keep this relative to your CSS file location */
+  background-image: url("../assets/Hartwell_Dam.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.75;
+  z-index: -1;
+}
+
+/* Layout */
+.container{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 20px 18px 44px;
+}
+
+/* Skip link + sticky header offset */
+main{ scroll-margin-top: 140px; }
+
+/* =========================
+   Topbar (Centered desktop)
+   ========================= */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background:rgba(17,97,172,1);
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+}
+/* Desktop */
+@media (min-width: 768px) {
+  .navRow{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+	padding: 12px 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .navRow{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.brandLink{ color: inherit; text-decoration:none; }
+
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.seal {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+}
+
+.seal img {
+  width: 100%;
+  height: auto;
+}
+
+.brandText{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  line-height:1.1;
+}
+.brandText .kicker{
+  font-family: "Quintessential", serif;
+  font-size:60px;
+  font-weight: 400;
+  color: rgba(230, 199, 106, 1);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.brandText .title{
+  font-family: "Felipa", serif;
+  font-size: 24px;
+  font-weight: 400; /* or remove this line entirely */
+  color: var(--text);
+}
+
+/* Desktop top nav: one line, centered */
+.topNav{
+  display:flex;
+  flex-wrap:nowrap;          /* do not wrap */
+  gap:6px;
+  align-items:center;
+  justify-content:center;
+}
+
+.topNav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height: 44px;
+  padding: 10px 12px;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.86);
+
+  color: inherit;
+  text-decoration:none;
+  font-weight: 900;
+}
+
+.topNav a:hover{ transform: translateY(-1px); }
+
+.topNav a.active{
+  border-color: var(--focus);
+  box-shadow: 0 0 0 4px var(--focus-soft);
+}
+
+/* ✅ Menu button hidden on desktop even though it also has .btn */
+.btn.menuBtn{ display:none !important; }
+
+/* ✅ Make the hidden attribute always hide elements */
+[hidden]{ display:none !important; }
+
+/* =========================
+   Mobile / Zoom menu panel
+   Targets the actual IDs used by JS:
+   #menuBackdrop + #mobileMenu + #menuClose
+   ========================= */
+
+#menuBackdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 999;
+}
+
+/* The slide-in panel */
+#mobileMenu{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(420px, 92vw);
+
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid var(--border);
+
+  z-index: 1000;
+  box-shadow: 0 24px 70px rgba(0,0,0,.22);
+
+  padding: 14px;
+  overflow: auto;
+
+  color: #111; /* ensure readable text on light panel */
+}
+
+/* Header row inside the panel */
+#mobileMenu .menuPanelHead{
+  display:flex;
+  align-items:center;
+  margin-bottom: 28px;
+}
+
+#mobileMenu .menuTitle{
+  font-weight: 900;
+  font-size: 18px;
+}
+
+/* Close button pinned fully right */
+#mobileMenu #menuClose{
+  margin-left: auto;
+}
+
+/* Links inside the panel */
+#mobileMenu .menuNav a{
+  display:flex;
+  align-items:center;
+  min-height: 44px;
+
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  text-decoration:none;
+  color: inherit;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+  background: rgba(255,255,255,.90);
+}
+
+#mobileMenu .menuNav hr{
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 14px 0;
+}
+
+/* When zoomed / narrow: show Menu button, hide top nav */
+@media (max-width: 1200px){
+  .topNav{ display:none; }
+
+  /* show menu button and pin it top-right */
+  .btn.menuBtn{
+    display:inline-flex !important;
+    position:absolute;
+    right: 18px;
+    top: 16px;
+  }
+}
+
+/* Optional: prevent page scrolling behind open menu */
+body.menuOpen{ overflow: hidden; }
+
+/* When zoomed / narrow: show Menu button, hide top nav */
+@media (max-width: 1200px){
+  .topNav{ display:none; }
+
+  /* show menu button and pin it top-right */
+  .btn.menuBtn{
+    display:inline-flex !important;
+    position:absolute;
+    right: 18px;
+    top: 16px;
+  }
+}
+
+/* =========================
+   Page layout + sidebar card
+   ========================= */
+.pageLayout {
+  display: block;
+}
+
+/* ✅ No independent scroll (your old file had overflow-y:auto) */
+.sidebar{
+  position: sticky;
+  top: 132px;
+}
+
+.sideNav{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-top: 10px;
+}
+
+.sideNav a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  padding:14px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fbfdff;
+  color: var(--text);
+  font-weight: 900;
+  text-decoration:none;
+}
+
+.sideNav a:hover{
+  border-color: rgba(31,78,140,.30);
+  background: rgba(31,78,140,.06);
+}
+.sideNav a.active{
+  border-color: rgba(31,78,140,.40);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.sideNav .hint{
+  font-size:12px;
+  color: var(--muted);
+  font-weight:800;
+}
+
+/* Keep alert full-width */
+#alertHolder{ margin-top: 14px; }
+
+/* Reflow for 400% zoom / small widths */
+@media (max-width: 980px){
+  .pageLayout{ grid-template-columns: 1fr; }
+  .sidebar{ position: static; }
+  .sideNav{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .sideNav a{ flex: 1 1 160px; }
+}
+
+/* =========================
+   Hero + badges + tools
+   ========================= */
+.hero{
+  display:grid;
+  gap:16px;
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card2);
+  box-shadow: var(--shadow);
+}
+
+.heroTop{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap: wrap;
+}
+
+.hero h1{
+  margin:0;
+  font-size: 30px;
+  letter-spacing:.2px;
+  color: var(--text);
+}
+
+.hero p{
+  margin:6px 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.badgeRow{
+  display:flex;
+  gap:10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.badge{
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(31,78,140,.18);
+  background: rgba(31,78,140,.06);
+  color: var(--muted);
+  font-size: 13px;
+}
+.badge strong{ color: var(--text); }
+
+/* Page tools (search + quick actions) */
+.pageTools{
+  margin-top: 12px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+.pageTools .field{ max-width: 520px; }
+
+/* =========================
+   Grid + cards + lists
+   ========================= */
+.grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+@media (max-width: 980px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+.card{
+  border:1px solid var(--border);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.cardHeader{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.card h2{
+  margin:0;
+  font-size: 16px;
+  letter-spacing:.2px;
+  color: var(--text);
+}
+
+.sub{
+  margin:6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.list{
+  margin-top: 12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* =========================
+   Announcement Rotator
+   ========================= */
+.annRotator .annTitle {
+  font-weight: 800;
+  font-size: 18px;
+  margin: 0;
+}
+
+.annRotator .annMeta {
+  opacity: .8;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.annRotator .annBody {
+  margin-top: 10px;
+}
+
+.item{
+  padding: 12px;
+  border-radius: 16px;
+  border:1px solid var(--border);
+  background: #fbfdff;
+}
+
+.itemTop{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap: wrap;
+}
+
+.itemTitle{
+  font-weight: 900;
+  margin:0;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.meta{
+  color: var(--muted);
+  font-size: 12px;
+  display:flex;
+  gap:10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* Tags */
+.tag{
+  font-size: 12px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border:1px solid var(--border);
+  color: var(--muted);
+  background: #ffffff;
+  font-weight: 800;
+}
+.tag.alert{
+  border-color: rgba(185,28,28,.25);
+  color: #8b1a1a;
+  background: rgba(185,28,28,.06);
+}
+.tag.info{
+  border-color: rgba(31,78,140,.25);
+  color: var(--accent);
+  background: rgba(31,78,140,.06);
+}
+.tag.project{
+  border-color: rgba(180,83,9,.25);
+  color: #8a4b10;
+  background: rgba(180,83,9,.06);
+}
+
+/* Alert bar */
+.alertBar{
+  padding: 12px 14px;
+  border-radius: 18px;
+  border:1px solid rgba(185,28,28,.25);
+  background: rgba(185,28,28,.06);
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  justify-content:space-between;
+}
+
+.alertBar strong{ display:block; }
+
+.alertBar .muted{
+  color: #6b2a2a;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.alertBar .x{
+  border:1px solid rgba(185,28,28,.25);
+  background: #ffffff;
+  color: #8b1a1a;
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor:pointer;
+  font-weight: 900;
+}
+
+.alertBar .x:hover{ background: rgba(185,28,28,.06); }
+
+/* Filters */
+.filters{
+  display:flex;
+  gap:8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.pill{
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(31,78,140,.22);
+  background: rgba(31,78,140,.06);
+  color: var(--accent);
+  cursor:pointer;
+  font-weight: 900;
+}
+.pill:hover{ background: rgba(31,78,140,.10); }
+.pill.active{
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+/* =========================
+   Buttons + fields
+   ========================= */
+.btnRow{
+  display:flex;
+  gap:10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center; /* helps “center text in nav buttons” */
+  gap:10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(31,78,140,.22);
+  background: rgba(31,78,140,.06);
+  color: var(--accent);
+  cursor:pointer;
+  user-select:none;
+  font-weight: 800;
+}
+.btn:hover{
+  border-color: rgba(31,78,140,.30);
+  background: rgba(31,78,140,.10);
+}
+
+.btn.primary{
+  border-color: var(--accent);
+  background: var(--accent);
+  color:#fff;
+}
+.btn.primary:hover{
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.btn.ghost{
+  background: transparent;
+  border-color: rgba(31,78,140,.18);
+  color: var(--accent);
+}
+.btn.ghost:hover{ background: rgba(31,78,140,.06); }
+
+button:disabled,
+.btn[aria-disabled="true"]{
+  opacity:.55;
+  cursor:not-allowed;
+}
+
+.field{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border:1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  outline:none;
+  font-size: 14px;
+}
+
+/* =========================
+   Footer (banner-style)
+   ========================= */
+.footer{
+  margin-top: 28px;
+  padding: 14px 18px;
+
+  border-radius: 18px;
+  border: 1px solid var(--border);
+
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.10);
+
+  color: var(--text);
+  font-size: 14px;
+
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 600px){
+  .footer{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+   Toast
+   ========================= */
+.toast{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 99;
+  max-width: 380px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 12px 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.14);
+  display:none;
+}
+.toast.show{ display:block; }
+.toast .tTitle{ font-weight: 950; color: var(--text); }
+.toast .tBody{ color: var(--muted); margin-top: 4px; font-size: 13px; }
+
+/* =========================
+   Accessibility helpers
+   ========================= */
+.sr-only{
+  position:absolute !important;
+  width:1px; height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0);
+  white-space:nowrap; border:0;
+}
+
+.skip-link{
+  position:absolute;
+  left:12px; top:10px;
+  z-index:9999;
+  padding:10px 12px;
+  border-radius: 12px;
+  border:1px solid var(--border);
+  background: #fff;
+  color: var(--accent);
+  font-weight: 900;
+  transform: translateY(-160%);
+}
+.skip-link:focus{ transform: translateY(0); }
+
+/* Strong visible focus for interactive elements */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.pill:focus-visible,
+.field:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+  outline: 4px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 12px;
+  box-shadow: 0 0 0 4px var(--focus-soft);
+  scroll-margin-top: 160px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+}
+
+/* Standard links used for email/website in directory */
+.link{
+  color: var(--accent);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.link:visited{ color: var(--accent-dark); }
+
+/* Phone links: clickable only on mobile */
+.phone-link{
+  color: inherit;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+}
+@media (max-width: 768px){
+  .phone-link{
+    pointer-events: auto;
+    color: var(--accent);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+/* Optional phone icon on touch devices only */
+.phone-link::before{
+  content: "📞 ";
+  display: none;
+}
+@media (hover: none) and (pointer: coarse){
+  .phone-link::before{ display:inline; }
+}
+
+
+/* Home: announcements + meetings row */
+.homeTwoCol{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+@media (max-width: 900px){
+  .homeTwoCol{ grid-template-columns: 1fr; }
+}
+
+/* --- Mini calendar container --- */
+.miniCal{ margin-top: 10px; }
+.miniCalHead{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+.miniCalTitle{
+  font-weight:700;
+  letter-spacing:.2px;
+}
+
+/* --- Legend --- */
+.miniCalLegend{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.miniCalKey{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  padding:4px 8px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.04);
+}
+.miniCalKeyLabel{ color: var(--muted); }
+
+/* --- Grid --- */
+.miniCalGrid{
+  display:grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap:8px;
+}
+.miniCalDow{
+  font-size:12px;
+  color: var(--muted);
+  text-align:center;
+}
+
+/* --- Cells --- */
+.miniCalCell{
+  position:relative;
+  min-height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-end;
+  padding:8px 10px;
+  text-decoration:none;
+  color: var(--text);
+}
+.miniCalCell.is-empty{
+  opacity:0;
+  pointer-events:none;
+  border-color:transparent;
+  background:transparent;
+}
+.miniCalDayNum{
+  font-weight:700;
+  font-size:14px;
+}
+
+.miniCalCell.is-event{
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+.miniCalCell:hover{
+  background: rgba(255,255,255,.06);
+}
+
+.miniCalCell:focus-visible{
+  outline: 3px solid rgba(255,122,24,.9);
+  outline-offset: 2px;
+}
+
+/* --- Dots (bottom-left) --- */
+.miniCalDots{
+  position:absolute;
+  left:10px;
+  bottom:8px;
+  display:flex;
+  gap:5px;
+  align-items:center;
+}
+.miniCalDot{
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.35);
+}
+.miniCalMore{
+  font-size:11px;
+  color: var(--muted);
+  padding-left:2px;
+}
+
+/* --- Type colors (adjust to your palette) --- */
+.mtg-commissioners{ background: rgba(80,160,255,.95); } /* blue */
+.mtg-assessors{     background: rgba(255,122,24,.95); } /* orange */
+.mtg-planning{      background: rgba(34,197,94,.95); }  /* green */
+.mtg-zoning{        background: rgba(168,85,247,.95); } /* purple */
+.mtg-default{       background: rgba(255,255,255,.55); } /* neutral */

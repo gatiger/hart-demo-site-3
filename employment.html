@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hart County, GA (Demo) • Employment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/alerts.css">
+
+<script defer src="js/alerts.js"></script>
+<script defer src="js/app.js"></script>
+
+  <style>
+    /* Employment page helpers (safe + reflow-friendly) */
+    .filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-top:12px;
+    }
+    .filters .field{
+      max-width: 420px;
+    }
+    .jobMeta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 12px;
+      align-items:center;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    .jobActions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+    .reqList{
+      margin: 10px 0 0 18px;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+    @media (max-width: 640px){
+      .filters .field{ max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+  <div class="navRow">
+    <a class="brand brandLink" href="index.html">
+      <div class="seal">
+        <img src="./assets/hart_seal.png" alt="Hart County, Georgia official seal">
+      </div>
+      <div class="brandText">
+        <div class="kicker">Hart County, Georgia</div>
+        <div class="title">PAGE TITLE HERE</div>
+      </div>
+    </a>
+
+    <!-- Desktop top navigation -->
+    <nav class="topNav" aria-label="Primary">
+      <a href="directory.html">Directory</a>
+      <a href="departments.html">Departments</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About</a>
+      <a href="paynes-creek.html">Paynes Creek</a>
+      <a href="news.html">News</a>
+      <a href="meetings.html">Meetings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="btn menuBtn" type="button"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            id="menuBtn">
+      Menu
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu panel (add right after header) -->
+<div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+<aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+  <div class="menuPanelHead">
+    <div class="menuPanelTitle">Menu</div>
+    <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+
+  <nav class="menuNav" aria-label="Primary mobile">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="departments.html">Departments</a>
+    <a href="commissioners.html">Commissioners</a>
+    <a href="employment.html">Employment</a>
+    <a href="about.html">About Hart County</a>
+    <a href="paynes-creek.html">Paynes Creek Campground</a>
+    <hr>
+    <a href="news.html">News</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+
+
+  <main id="main" class="container" tabindex="-1">
+    <!-- Full-width alerts stays on top -->
+    <div id="alertHolder"></div>
+
+    <div class="pageLayout">
+      
+
+      <!-- RIGHT: page content -->
+      <div>
+        <section class="hero" style="margin-top:14px" aria-label="Employment overview">
+          <div class="heroTop">
+            <div>
+              <h1>Employment Opportunities</h1>
+              <p>
+                View current job openings and learn how to apply (demo-only). Listings below are placeholders for administration review.
+              </p>
+				<!-- ✅ ADD PAGE TOOLS RIGHT HERE -->
+      <div class="pageTools" aria-label="Page tools">
+        <label class="sr-only" for="siteSearch">Search</label>
+        <input id="siteSearch" class="field" type="text" placeholder="Search this page…" />
+
+        <div class="btnRow">
+          <a class="btn" href="directory.html">Find a Department</a>
+          <a class="btn" href="contact.html">Report an Issue</a>
+          <button class="btn ghost" type="button"
+            data-toast="Demo: Accessibility|Would open an accessibility help page.">
+            Accessibility
+          </button>
+        </div>
+      </div>
+      <!-- ✅ END PAGE TOOLS -->
+              <div class="filters" aria-label="Job filters">
+                <label class="sr-only" for="jobSearch">Search jobs</label>
+                <input id="jobSearch" class="field" type="text" placeholder="Search by title or department..." />
+
+                <label class="sr-only" for="jobDept">Department</label>
+                <select id="jobDept" class="field" style="max-width:260px">
+                  <option value="">All departments</option>
+                  <option>Administration</option>
+                  <option>Public Works</option>
+                  <option>Sheriff</option>
+                  <option>Parks & Recreation</option>
+                  <option>Finance</option>
+                </select>
+
+                <button class="btn" type="button" id="clearFilters">Clear</button>
+              </div>
+
+              <div class="badgeRow" aria-label="Notes" style="margin-top:10px">
+                <div class="badge"><strong>Office Hours:</strong> 8:30 AM – 5:00 PM</div>
+                <div class="badge"><strong>Equal Opportunity:</strong> Demo statement</div>
+              </div>
+            </div>
+
+            <div class="card" style="min-width:280px; max-width:360px" aria-label="How to apply">
+              <h2>How to Apply</h2>
+              <p class="sub">Demo workflow for presentation</p>
+              <ol class="reqList" style="margin-left:18px">
+                <li>Review the position details</li>
+                <li>Prepare resume and references</li>
+                <li>Click “Apply (Demo)” to view next steps</li>
+              </ol>
+              <div class="btnRow" style="margin-top:12px">
+                <button class="btn primary" type="button"
+                  data-toast="Demo: Application packet|Would open a PDF packet.">
+                  Application Packet
+                </button>
+                <button class="btn ghost" type="button"
+                  data-toast="Demo: Contact HR|Would open a contact form/email.">
+                  Contact HR
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px" aria-label="Job listings">
+          <div class="cardHeader">
+            <div>
+              <h2>Open Positions</h2>
+              <p class="sub">Tap “Apply (Demo)” to simulate next steps</p>
+            </div>
+          </div>
+
+          <div class="list" id="jobsList">
+
+            <article class="item job" data-title="Administrative Assistant" data-dept="Administration" aria-label="Job listing">
+              <div class="itemTop">
+                <h3 class="itemTitle">Administrative Assistant</h3>
+                <span class="tag info">Administration</span>
+              </div>
+              <div class="jobMeta">
+                <span>Full-time</span><span>•</span>
+                <span>$15–$18/hr (demo)</span><span>•</span>
+                <span>Posted: Feb 2026</span>
+              </div>
+              <p class="sub" style="margin-top:8px">
+                Supports front office operations, scheduling, and document processing (demo description).
+              </p>
+              <ul class="reqList">
+                <li>High school diploma or equivalent</li>
+                <li>Comfortable with email and office software</li>
+                <li>Customer service skills</li>
+              </ul>
+              <div class="jobActions">
+                <button class="btn primary" type="button"
+                  data-toast="Apply: Administrative Assistant|Demo only — would open application instructions.">
+                  Apply (Demo)
+                </button>
+                <button class="btn" type="button"
+                  data-toast="Details: Administrative Assistant|Demo only — would open a position PDF.">
+                  View Details
+                </button>
+              </div>
+            </article>
+
+            <article class="item job" data-title="Equipment Operator" data-dept="Public Works" aria-label="Job listing">
+              <div class="itemTop">
+                <h3 class="itemTitle">Equipment Operator</h3>
+                <span class="tag">Public Works</span>
+              </div>
+              <div class="jobMeta">
+                <span>Full-time</span><span>•</span>
+                <span>$18–$22/hr (demo)</span><span>•</span>
+                <span>Posted: Feb 2026</span>
+              </div>
+              <p class="sub" style="margin-top:8px">
+                Operates county equipment for road maintenance and general service work (demo description).
+              </p>
+              <ul class="reqList">
+                <li>Valid driver’s license</li>
+                <li>Basic equipment safety knowledge</li>
+                <li>Ability to work outdoors</li>
+              </ul>
+              <div class="jobActions">
+                <button class="btn primary" type="button"
+                  data-toast="Apply: Equipment Operator|Demo only — would open application instructions.">
+                  Apply (Demo)
+                </button>
+                <button class="btn" type="button"
+                  data-toast="Details: Equipment Operator|Demo only — would open a position PDF.">
+                  View Details
+                </button>
+              </div>
+            </article>
+
+            <article class="item job" data-title="Park Ranger" data-dept="Parks & Recreation" aria-label="Job listing">
+              <div class="itemTop">
+                <h3 class="itemTitle">Park Ranger</h3>
+                <span class="tag">Parks & Recreation</span>
+              </div>
+              <div class="jobMeta">
+                <span>Part-time</span><span>•</span>
+                <span>$14–$16/hr (demo)</span><span>•</span>
+                <span>Posted: Feb 2026</span>
+              </div>
+              <p class="sub" style="margin-top:8px">
+                Assists with park operations, visitor support, and facility checks (demo description).
+              </p>
+              <ul class="reqList">
+                <li>Weekend availability</li>
+                <li>Customer service skills</li>
+                <li>Comfortable working outdoors</li>
+              </ul>
+              <div class="jobActions">
+                <button class="btn primary" type="button"
+                  data-toast="Apply: Park Ranger|Demo only — would open application instructions.">
+                  Apply (Demo)
+                </button>
+                <button class="btn" type="button"
+                  data-toast="Details: Park Ranger|Demo only — would open a position PDF.">
+                  View Details
+                </button>
+              </div>
+            </article>
+
+            <article class="item job" data-title="Accounting Clerk" data-dept="Finance" aria-label="Job listing">
+              <div class="itemTop">
+                <h3 class="itemTitle">Accounting Clerk</h3>
+                <span class="tag">Finance</span>
+              </div>
+              <div class="jobMeta">
+                <span>Full-time</span><span>•</span>
+                <span>$16–$20/hr (demo)</span><span>•</span>
+                <span>Posted: Feb 2026</span>
+              </div>
+              <p class="sub" style="margin-top:8px">
+                Supports invoicing, records management, and basic bookkeeping tasks (demo description).
+              </p>
+              <ul class="reqList">
+                <li>Attention to detail</li>
+                <li>Comfortable with spreadsheets</li>
+                <li>Confidentiality and accuracy</li>
+              </ul>
+              <div class="jobActions">
+                <button class="btn primary" type="button"
+                  data-toast="Apply: Accounting Clerk|Demo only — would open application instructions.">
+                  Apply (Demo)
+                </button>
+                <button class="btn" type="button"
+                  data-toast="Details: Accounting Clerk|Demo only — would open a position PDF.">
+                  View Details
+                </button>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>© 2026 Hart County, Georgia (Demo Prototype)</div>
+          <div><strong>Job listings are placeholders for administration review.</strong></div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+      <div>
+        <div class="tTitle">Title</div>
+        <div class="tBody">Body</div>
+      </div>
+      <button id="toastClose" class="btn ghost" type="button" aria-label="Close message">Close</button>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const search = document.getElementById('jobSearch');
+      const dept = document.getElementById('jobDept');
+      const clear = document.getElementById('clearFilters');
+      const list = document.getElementById('jobsList');
+      if(!search || !dept || !clear || !list) return;
+
+      function applyFilters(){
+        const q = search.value.trim().toLowerCase();
+        const d = (dept.value || "").trim().toLowerCase();
+
+        list.querySelectorAll('.job').forEach(card => {
+          const title = (card.getAttribute('data-title') || "").toLowerCase();
+          const deptName = (card.getAttribute('data-dept') || "").toLowerCase();
+          const text = card.innerText.toLowerCase();
+
+          const matchQ = !q || title.includes(q) || text.includes(q);
+          const matchD = !d || deptName === d;
+
+          card.style.display = (matchQ && matchD) ? "" : "none";
+        });
+      }
+
+      search.addEventListener('input', applyFilters);
+      dept.addEventListener('change', applyFilters);
+      clear.addEventListener('click', () => {
+        search.value = "";
+        dept.value = "";
+        applyFilters();
+        search.focus();
+      });
+    })();
+  </script>
+</body>
+</html>

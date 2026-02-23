@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hart County, GA (Demo) • About Hart County</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/alerts.css">
+
+<script defer src="js/alerts.js"></script>
+<script defer src="js/app.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+  <div class="navRow">
+    <a class="brand brandLink" href="index.html">
+      <div class="seal">
+        <img src="./assets/hart_seal.png" alt="Hart County, Georgia official seal">
+      </div>
+      <div class="brandText">
+        <div class="kicker">Hart County, Georgia</div>
+        <div class="title">PAGE TITLE HERE</div>
+      </div>
+    </a>
+
+    <!-- Desktop top navigation -->
+    <nav class="topNav" aria-label="Primary">
+      <a href="directory.html">Directory</a>
+      <a href="departments.html">Departments</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About</a>
+      <a href="paynes-creek.html">Paynes Creek</a>
+      <a href="news.html">News</a>
+      <a href="meetings.html">Meetings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="btn menuBtn" type="button"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            id="menuBtn">
+      Menu
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu panel (add right after header) -->
+<div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+<aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+  <div class="menuPanelHead">
+    <div class="menuPanelTitle">Menu</div>
+    <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+
+  <nav class="menuNav" aria-label="Primary mobile">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="departments.html">Departments</a>
+    <a href="commissioners.html">Commissioners</a>
+    <a href="employment.html">Employment</a>
+    <a href="about.html">About Hart County</a>
+    <a href="paynes-creek.html">Paynes Creek Campground</a>
+    <hr>
+    <a href="news.html">News</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+
+
+  <main id="main" class="container" tabindex="-1">
+
+    <!-- Alerts stay full width -->
+    <div id="alertHolder"></div>
+
+    <div class="pageLayout">
+
+     
+
+      <!-- Main Content -->
+      <div>
+
+        <section class="hero" style="margin-top:14px" aria-label="County overview">
+          <div>
+            <h1>Welcome to Hart County</h1>
+            <p>
+              Hart County is located in northeast Georgia and is known for its strong community, scenic beauty,
+              and proximity to Lake Hartwell. This page provides a brief overview of the county’s history,
+              geography, and civic structure. (Demo content for presentation.)
+            </p>
+			<!-- ✅ ADD PAGE TOOLS RIGHT HERE -->
+      <div class="pageTools" aria-label="Page tools">
+        <label class="sr-only" for="siteSearch">Search</label>
+        <input id="siteSearch" class="field" type="text" placeholder="Search this page…" />
+
+        <div class="btnRow">
+          <a class="btn" href="directory.html">Find a Department</a>
+          <a class="btn" href="contact.html">Report an Issue</a>
+          <button class="btn ghost" type="button"
+            data-toast="Demo: Accessibility|Would open an accessibility help page.">
+            Accessibility
+          </button>
+        </div>
+      </div>
+      <!-- ✅ END PAGE TOOLS -->
+            <div class="badgeRow" aria-label="County facts">
+              <div class="badge"><strong>Established:</strong> 1853</div>
+              <div class="badge"><strong>County Seat:</strong> Hartwell</div>
+              <div class="badge"><strong>Region:</strong> Northeast Georgia</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid" aria-label="County details">
+
+          <div class="card">
+            <h2>History</h2>
+            <p class="sub">
+              Hart County was formed in the mid-19th century and named in honor of Revolutionary War figure Nancy Hart.
+              Over time, it developed as a rural agricultural community and later expanded with tourism and recreation
+              centered around Lake Hartwell.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>Geography & Recreation</h2>
+            <p class="sub">
+              The county features rolling hills, farmland, and access to Lake Hartwell — a major recreational destination
+              for boating, fishing, and camping. Parks and outdoor amenities contribute to the area’s quality of life.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>Government Structure</h2>
+            <p class="sub">
+              Hart County operates under a Board of Commissioners form of government. Elected officials oversee
+              administration, budgeting, infrastructure, and public services.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>Community & Services</h2>
+            <p class="sub">
+              The county provides essential services including public safety, road maintenance, parks,
+              planning and zoning, elections administration, and tax services.
+            </p>
+          </div>
+
+        </section>
+
+        <section class="card" style="margin-top:16px" aria-label="County statistics">
+          <div class="cardHeader">
+            <div>
+              <h2>County At a Glance</h2>
+              <p class="sub">Demo data for presentation purposes</p>
+            </div>
+          </div>
+
+          <div class="list">
+            <div class="item">
+              <div class="itemTitle">Population</div>
+              <div class="meta">Approximately 26,000 residents</div>
+            </div>
+
+            <div class="item">
+              <div class="itemTitle">Major Employers</div>
+              <div class="meta">Education, healthcare, manufacturing, public administration</div>
+            </div>
+
+            <div class="item">
+              <div class="itemTitle">Transportation</div>
+              <div class="meta">State highways, regional access to I-85 corridor</div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>© 2026 Hart County, Georgia (Demo Prototype)</div>
+          <div><strong>Content shown is placeholder text for administrative review.</strong></div>
+        </footer>
+
+      </div>
+    </div>
+
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+      <div>
+        <div class="tTitle">Title</div>
+        <div class="tBody">Body</div>
+      </div>
+      <button id="toastClose" class="btn ghost" type="button" aria-label="Close message">Close</button>
+    </div>
+  </div>
+
+</body>
+</html>

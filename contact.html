@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hart County, GA (Demo) • Contact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/alerts.css">
+
+<script defer src="js/alerts.js"></script>
+<script defer src="js/app.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+  <div class="navRow">
+    <a class="brand brandLink" href="index.html">
+      <div class="seal">
+        <img src="./assets/hart_seal.png" alt="Hart County, Georgia official seal">
+      </div>
+      <div class="brandText">
+        <div class="kicker">Hart County, Georgia</div>
+        <div class="title">PAGE TITLE HERE</div>
+      </div>
+    </a>
+
+    <!-- Desktop top navigation -->
+    <nav class="topNav" aria-label="Primary">
+      <a href="directory.html">Directory</a>
+      <a href="departments.html">Departments</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About</a>
+      <a href="paynes-creek.html">Paynes Creek</a>
+      <a href="news.html">News</a>
+      <a href="meetings.html">Meetings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="btn menuBtn" type="button"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            id="menuBtn">
+      Menu
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu panel (add right after header) -->
+<div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+<aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+  <div class="menuPanelHead">
+    <div class="menuPanelTitle">Menu</div>
+    <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+
+  <nav class="menuNav" aria-label="Primary mobile">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="departments.html">Departments</a>
+    <a href="commissioners.html">Commissioners</a>
+    <a href="employment.html">Employment</a>
+    <a href="about.html">About Hart County</a>
+    <a href="paynes-creek.html">Paynes Creek Campground</a>
+    <hr>
+    <a href="news.html">News</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+
+
+  <main id="main" class="container" tabindex="-1">
+    <section class="hero" aria-label="Contact overview">
+      <div class="heroTop">
+        <div>
+          <h1>Contact Hart County (Demo)</h1>
+          <p>
+            A clean directory + message form for citizens.
+            For the demo, the form shows a success toast (no email sent).
+          </p>
+		  <!-- ✅ ADD PAGE TOOLS RIGHT HERE -->
+      <div class="pageTools" aria-label="Page tools">
+        <label class="sr-only" for="siteSearch">Search</label>
+        <input id="siteSearch" class="field" type="text" placeholder="Search this page…" />
+
+        <div class="btnRow">
+          <a class="btn" href="directory.html">Find a Department</a>
+          <a class="btn" href="contact.html">Report an Issue</a>
+          <button class="btn ghost" type="button"
+            data-toast="Demo: Accessibility|Would open an accessibility help page.">
+            Accessibility
+          </button>
+        </div>
+      </div>
+      <!-- ✅ END PAGE TOOLS -->
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Contact content">
+      <div class="card" aria-label="Directory">
+        <h2>Directory</h2>
+        <p class="sub">Placeholder numbers for demonstration</p>
+
+        <div class="list">
+          <div class="item">
+            <div class="itemTop">
+              <h3 class="itemTitle">County Administration</h3>
+              <span class="tag info">Office</span>
+            </div>
+            <div class="meta">
+              <span>(706) 376-2024</span><span>•</span>
+              <span>800 Chandler Street, Hartwell, GA</span>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="itemTop">
+              <h3 class="itemTitle">Elections Office</h3>
+              <span class="tag">Department</span>
+            </div>
+            <div class="meta">
+              <span>(706) 000-0001</span><span>•</span>
+              <span>elections@hartcountyga.gov (demo)</span>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="itemTop">
+              <h3 class="itemTitle">Tax Commissioner</h3>
+              <span class="tag">Department</span>
+            </div>
+            <div class="meta">
+              <span>(706) 000-0000</span><span>•</span>
+              <span>tax@hartcountyga.gov (demo)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" aria-label="Send a message">
+        <h2>Send a Message</h2>
+        <p class="sub">Demo-only form</p>
+
+        <form id="contactForm" style="margin-top:12px; display:grid; gap:10px">
+          <label class="sr-only" for="c_name">Your name</label>
+          <input id="c_name" class="field" type="text" name="name" placeholder="Your name" autocomplete="name" required>
+
+          <label class="sr-only" for="c_email">Your email</label>
+          <input id="c_email" class="field" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+
+          <label class="sr-only" for="c_topic">Topic</label>
+          <input id="c_topic" class="field" type="text" name="topic" placeholder="Topic (e.g., Roads, Taxes, Elections)" required>
+
+          <label class="sr-only" for="c_msg">Message</label>
+          <textarea id="c_msg" class="field" name="message" placeholder="Message" rows="6" required></textarea>
+
+          <button class="btn primary" type="submit">Send (Demo)</button>
+          <button class="btn" type="button" data-action="hours">View Office Hours</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 Hart County, Georgia (Demo Prototype)</div>
+      <div>Demo contact experience for administration review</div>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+      <div>
+        <div class="tTitle">Title</div>
+        <div class="tBody">Body</div>
+      </div>
+      <button id="toastClose" class="btn ghost" type="button" aria-label="Close message">Close</button>
+    </div>
+  </div>
+</body>
+</html>

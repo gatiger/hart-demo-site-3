@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hart County, GA (Demo) • Paynes Creek Campground</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/alerts.css">
+
+<script defer src="js/alerts.js"></script>
+<script defer src="js/app.js"></script>
+
+  <style>
+    /* Page-only helpers (reflow safe) */
+    .photoGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .photo{
+      border:1px solid var(--border);
+      border-radius: 18px;
+      overflow:hidden;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 16px 40px rgba(0,0,0,.10);
+      min-height: 160px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .photo .placeholder{
+      padding: 18px;
+      text-align:center;
+      color: var(--muted);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .infoList{
+      margin: 10px 0 0 18px;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 720px){
+      .photoGrid{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+  <div class="navRow">
+    <a class="brand brandLink" href="index.html">
+      <div class="seal">
+        <img src="./assets/hart_seal.png" alt="Hart County, Georgia official seal">
+      </div>
+      <div class="brandText">
+        <div class="kicker">Hart County, Georgia</div>
+        <div class="title">PAGE TITLE HERE</div>
+      </div>
+    </a>
+
+    <!-- Desktop top navigation -->
+    <nav class="topNav" aria-label="Primary">
+      <a href="directory.html">Directory</a>
+      <a href="departments.html">Departments</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About</a>
+      <a href="paynes-creek.html">Paynes Creek</a>
+      <a href="news.html">News</a>
+      <a href="meetings.html">Meetings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="btn menuBtn" type="button"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            id="menuBtn">
+      Menu
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu panel (add right after header) -->
+<div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+<aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+  <div class="menuPanelHead">
+    <div class="menuPanelTitle">Menu</div>
+    <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+
+  <nav class="menuNav" aria-label="Primary mobile">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="departments.html">Departments</a>
+    <a href="commissioners.html">Commissioners</a>
+    <a href="employment.html">Employment</a>
+    <a href="about.html">About Hart County</a>
+    <a href="paynes-creek.html">Paynes Creek Campground</a>
+    <hr>
+    <a href="news.html">News</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+
+
+  <main id="main" class="container" tabindex="-1">
+
+    <!-- Alerts stay full width -->
+    <div id="alertHolder"></div>
+
+    <div class="pageLayout">
+
+      
+
+      <!-- Main Content -->
+      <div>
+
+        <section class="hero" style="margin-top:14px" aria-label="Campground overview">
+          <div class="heroTop">
+            <div>
+              <h1>Paynes Creek Campground</h1>
+              <p>
+                Enjoy lakeside camping, boating access, and outdoor recreation near Lake Hartwell.
+                This page is a demo layout for administrative review — details below are placeholders.
+              </p>
+				<!-- ✅ ADD PAGE TOOLS RIGHT HERE -->
+      <div class="pageTools" aria-label="Page tools">
+        <label class="sr-only" for="siteSearch">Search</label>
+        <input id="siteSearch" class="field" type="text" placeholder="Search this page…" />
+
+        <div class="btnRow">
+          <a class="btn" href="directory.html">Find a Department</a>
+          <a class="btn" href="contact.html">Report an Issue</a>
+          <button class="btn ghost" type="button"
+            data-toast="Demo: Accessibility|Would open an accessibility help page.">
+            Accessibility
+          </button>
+        </div>
+      </div>
+      <!-- ✅ END PAGE TOOLS -->
+              <div class="badgeRow" aria-label="Highlights">
+                <div class="badge"><strong>Lakeside sites</strong> (demo)</div>
+                <div class="badge"><strong>Boat access</strong> (demo)</div>
+                <div class="badge"><strong>Family friendly</strong> (demo)</div>
+              </div>
+
+              <div class="btnRow" style="margin-top:12px">
+                <button class="btn primary" type="button"
+                  data-toast="Demo: Reserve a Site|Would open the campground reservation portal.">
+                  Reserve a Site (Demo)
+                </button>
+                <button class="btn" type="button"
+                  data-toast="Demo: Directions|Would open a map with directions to the campground.">
+                  Directions (Demo)
+                </button>
+                <a class="btn ghost" href="contact.html">Contact</a>
+              </div>
+            </div>
+
+            <div class="card" style="min-width:280px; max-width:360px" aria-label="Quick info">
+              <h2>Quick Info</h2>
+              <p class="sub">Demo details</p>
+
+              <div class="list" style="margin-top:10px">
+                <div class="item" style="padding:12px">
+                  <div class="itemTitle">Office Hours</div>
+                  <div class="meta">8:30 AM – 5:00 PM</div>
+                </div>
+                <div class="item" style="padding:12px">
+                  <div class="itemTitle">Season</div>
+                  <div class="meta">Year-round (demo)</div>
+                </div>
+                <div class="item" style="padding:12px">
+                  <div class="itemTitle">Phone</div>
+                  <div class="meta">
+                    <a class="phone-link" href="tel:17065550301">(706) 555-0301</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo placeholders -->
+          <div class="photoGrid" aria-label="Campground photos">
+            <div class="photo">
+              <!-- Replace with a real photo later -->
+              <!-- <img src="./assets/paynes-creek/photo-1.jpg" alt="Paynes Creek Campground lakeside campsites"> -->
+              <div class="placeholder">Photo placeholder<br><span style="font-weight:700">(Add: assets/paynes-creek/photo-1.jpg)</span></div>
+            </div>
+            <div class="photo">
+              <!-- <img src="./assets/paynes-creek/photo-2.jpg" alt="Paynes Creek Campground picnic area and shoreline"> -->
+              <div class="placeholder">Photo placeholder<br><span style="font-weight:700">(Add: assets/paynes-creek/photo-2.jpg)</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="split" aria-label="Campground details">
+
+          <div class="card">
+            <h2>Amenities</h2>
+            <p class="sub">Typical amenities listed here as demo content.</p>
+            <ul class="infoList">
+              <li>Campsites (RV/tent) (demo)</li>
+              <li>Restrooms & showers (demo)</li>
+              <li>Picnic areas (demo)</li>
+              <li>Boat ramp / lake access (demo)</li>
+              <li>Trash & recycling (demo)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>Fees & Reservations</h2>
+            <p class="sub">Demo numbers — replace with official fees and reservation process.</p>
+            <ul class="infoList">
+              <li>Nightly site fee: $25–$40 (demo)</li>
+              <li>Day-use: $5 (demo)</li>
+              <li>Check-in: 2:00 PM (demo)</li>
+              <li>Check-out: 11:00 AM (demo)</li>
+            </ul>
+            <div class="btnRow" style="margin-top:12px">
+              <button class="btn primary" type="button"
+                data-toast="Demo: Reservation portal|Would open online reservations.">
+                Reserve Online (Demo)
+              </button>
+              <button class="btn" type="button"
+                data-toast="Demo: Download brochure|Would download a PDF brochure.">
+                Download Brochure (Demo)
+              </button>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="card" style="margin-top:16px" aria-label="Rules and safety">
+          <div class="cardHeader">
+            <div>
+              <h2>Rules & Safety</h2>
+              <p class="sub">Clear rules help visitors and improve accessibility for all users.</p>
+            </div>
+          </div>
+
+          <div class="list">
+            <div class="item">
+              <div class="itemTitle">Quiet Hours</div>
+              <div class="meta">10:00 PM – 7:00 AM (demo)</div>
+            </div>
+
+            <div class="item">
+              <div class="itemTitle">Pets</div>
+              <div class="meta">Leashes required • clean up after pets (demo)</div>
+            </div>
+
+            <div class="item">
+              <div class="itemTitle">Fires</div>
+              <div class="meta">Fires in designated areas only • follow burn advisories (demo)</div>
+            </div>
+
+            <div class="item">
+              <div class="itemTitle">Emergency</div>
+              <div class="meta">Call 911 for emergencies • contact campground office for non-emergency issues (demo)</div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>© 2026 Hart County, Georgia (Demo Prototype)</div>
+          <div><strong>Campground details are placeholders for administrative review.</strong></div>
+        </footer>
+
+      </div>
+    </div>
+
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+      <div>
+        <div class="tTitle">Title</div>
+        <div class="tBody">Body</div>
+      </div>
+      <button id="toastClose" class="btn ghost" type="button" aria-label="Close message">Close</button>
+    </div>
+  </div>
+
+</body>
+</html>

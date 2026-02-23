@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "id": "service-directory",
+      "type": "Press",
+      "title": "Hart County launches new service directory (Demo)",
+      "date": "Feb 18, 2026",
+      "body": "A redesigned hub makes it easier to find departments and services."
+    },
+    {
+      "id": "parking-improvements",
+      "type": "Project",
+      "title": "Courthouse parking improvements begin next week (Demo)",
+      "date": "Feb 17, 2026",
+      "body": "Work will be phased to maintain access."
+    }
+  ]
+}

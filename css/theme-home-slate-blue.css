@@ -1,0 +1,13 @@
+/* Homepage-only theme: Slate + Civic Blue (modern municipal) */
+:root{
+  --accent: #2c5282;
+  --accent-dark: #1e3a5f;
+  --accent-soft: #e6edf6;
+
+  --focus: #ff7a18;
+  --focus-soft: rgba(255,122,24,.25);
+
+  --text: rgba(15, 27, 43, .92);
+  --muted: rgba(15, 27, 43, .70);
+  --border: rgba(15, 27, 43, .14);
+}

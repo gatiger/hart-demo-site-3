@@ -1,0 +1,13 @@
+{
+  "countyName": "Hart County, Georgia",
+  "officeHours": "8:30 AM – 5:00 PM",
+  "mainAddress": "800 Chandler Street, Hartwell, GA",
+  "mainPhone": "(706) 376-2024",
+  "alert": {
+    "id": "water-advisory",
+    "title": "County Alert: Boil Water Advisory (Demo)",
+    "body": "Impacts portions of Hartwell-area lines. Crews are flushing mains. Next update scheduled at 3:00 PM.",
+    "updated": "Updated today",
+    "enabled": true
+  }
+}

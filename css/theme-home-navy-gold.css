@@ -1,0 +1,19 @@
+:root{
+  --bg0:#f4f6fb;
+
+  --card:#ffffff;
+  --card2:#eef2f9;
+
+  --text:#1c2433;
+  --muted:#5f6a7c;
+
+  --border:#d6dce8;
+  --shadow: 0 14px 40px rgba(30,42,68,.08);
+
+  --accent:#1e2a44;
+  --accent-dark:#141d30;
+  --accent-soft:#e8edf7;
+
+  --focus:#ff7a18;
+  --focus-soft:rgba(255,122,24,.25);
+}

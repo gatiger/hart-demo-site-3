@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hart County, GA (Demo) • Directory</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/alerts.css">
+
+<script defer src="js/alerts.js"></script>
+<script defer src="js/app.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+  <div class="navRow">
+    <a class="brand brandLink" href="index.html">
+      <div class="seal">
+        <img src="./assets/hart_seal.png" alt="Hart County, Georgia official seal">
+      </div>
+      <div class="brandText">
+        <div class="kicker">Hart County, Georgia</div>
+        <div class="title">PAGE TITLE HERE</div>
+      </div>
+    </a>
+
+    <!-- Desktop top navigation -->
+    <nav class="topNav" aria-label="Primary">
+      <a href="directory.html">Directory</a>
+      <a href="departments.html">Departments</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About</a>
+      <a href="paynes-creek.html">Paynes Creek</a>
+      <a href="news.html">News</a>
+      <a href="meetings.html">Meetings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="btn menuBtn" type="button"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            id="menuBtn">
+      Menu
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu panel (add right after header) -->
+<div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+<aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+  <div class="menuPanelHead">
+    <div class="menuPanelTitle">Menu</div>
+    <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+
+  <nav class="menuNav" aria-label="Primary mobile">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="departments.html">Departments</a>
+    <a href="commissioners.html">Commissioners</a>
+    <a href="employment.html">Employment</a>
+    <a href="about.html">About Hart County</a>
+    <a href="paynes-creek.html">Paynes Creek Campground</a>
+    <hr>
+    <a href="news.html">News</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+
+
+  <main id="main" class="container" tabindex="-1">
+    <!-- Full-width alerts stays on top -->
+    <div id="alertHolder"></div>
+
+    <div class="pageLayout">
+      
+
+      <!-- RIGHT: page content -->
+      <div>
+        <section class="hero" style="margin-top:14px" aria-label="Directory overview">
+          <div class="heroTop">
+            <div>
+              <h1>Departments</h1>
+              <p>
+                Quick access to common county contacts (demo-only). Names and phone numbers are placeholders.
+              </p>
+				<!-- ✅ ADD PAGE TOOLS RIGHT HERE -->
+      <div class="pageTools" aria-label="Page tools">
+        <label class="sr-only" for="siteSearch">Search</label>
+        <input id="siteSearch" class="field" type="text" placeholder="Search this page…" />
+
+        <div class="btnRow">
+          <a class="btn" href="directory.html">Find a Department</a>
+          <a class="btn" href="contact.html">Report an Issue</a>
+          <button class="btn ghost" type="button"
+            data-toast="Demo: Accessibility|Would open an accessibility help page.">
+            Accessibility
+          </button>
+        </div>
+      </div>
+      <!-- ✅ END PAGE TOOLS -->
+              <div style="margin-top:12px">
+                <label class="sr-only" for="dirSearch">Search directory</label>
+                <input id="dirSearch" class="field" type="text" placeholder="Search names or departments (demo)..." />
+              </div>
+
+              <div class="badgeRow" aria-label="Tips" style="margin-top:10px">
+                <div class="badge"><strong>Tip:</strong> Call 911 for emergencies</div>
+                <div class="badge"><strong>Tip:</strong> Use “Contact” for messages</div>
+              </div>
+            </div>
+
+            <div class="card" style="min-width:280px; max-width:360px" aria-label="Common actions">
+              <h2>Common Actions</h2>
+              <p class="sub">Demo actions for presentation</p>
+              <div class="btnRow">
+                <button class="btn primary" type="button"
+                  data-toast="Demo: Call directory|Would start a call on mobile.">
+                  Call
+                </button>
+                <button class="btn" type="button"
+                  data-toast="Demo: Email directory|Would open an email draft.">
+                  Email
+                </button>
+                <button class="btn ghost" type="button"
+                  data-toast="Demo: Print directory|Would open a print-friendly view.">
+                  Print
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px" aria-label="Directory list">
+          <div class="cardHeader">
+            <div>
+              <h2>Contacts</h2>
+              <p class="sub">Generic entries with phone number under name</p>
+            </div>
+          </div>
+
+          <div class="list" id="directoryList">
+
+  <article class="item" aria-label="Administration Department">
+    <h3 class="itemTitle">
+      <a href="departments/administration.html">Administration</a>
+    </h3>
+    <div class="meta">
+      <a href="tel:17065550101" class="phone-link">(706) 555-0101</a>
+    </div>
+    <div class="meta">
+      <span>Hours: 8:30 AM – 5:00 PM</span>
+    </div>
+    <p class="sub" style="margin-top:6px">
+      County administration, budgeting, and executive coordination.
+    </p>
+  </article>
+
+  <article class="item" aria-label="Tax Commissioner Department">
+    <h3 class="itemTitle">
+      <a href="departments/tax-commissioner.html">Tax Commissioner</a>
+    </h3>
+    <div class="meta">
+      <a href="tel:17065550102" class="phone-link">(706) 555-0102</a>
+    </div>
+    <div class="meta">
+      <span>Hours: 8:30 AM – 5:00 PM</span>
+    </div>
+    <p class="sub" style="margin-top:6px">
+      Property taxes, tag renewals, and motor vehicle services.
+    </p>
+  </article>
+
+  <article class="item" aria-label="Elections Department">
+    <h3 class="itemTitle">
+      <a href="departments/elections.html">Elections</a>
+    </h3>
+    <div class="meta">
+      <a href="tel:17065550103" class="phone-link">(706) 555-0103</a>
+    </div>
+    <div class="meta">
+      <span>Hours: 8:30 AM – 5:00 PM</span>
+    </div>
+    <p class="sub" style="margin-top:6px">
+      Voter registration, ballots, and election administration.
+    </p>
+  </article>
+
+  <article class="item" aria-label="Clerk of Court Department">
+    <h3 class="itemTitle">
+      <a href="departments/clerk-of-court.html">Clerk of Court</a>
+    </h3>
+    <div class="meta">
+      <a href="tel:17065550104" class="phone-link">(706) 555-0104</a>
+    </div>
+    <div class="meta">
+      <span>Hours: 8:30 AM – 5:00 PM</span>
+    </div>
+    <p class="sub" style="margin-top:6px">
+      Court records, filings, and legal documentation.
+    </p>
+  </article>
+
+  <article class="item" aria-label="Public Works Department">
+    <h3 class="itemTitle">
+      <a href="departments/public-works.html">Public Works</a>
+    </h3>
+    <div class="meta">
+      <a href="tel:17065550105" class="phone-link">(706) 555-0105</a>
+    </div>
+    <div class="meta">
+      <span>Hours: 8:30 AM – 5:00 PM</span>
+    </div>
+    <p class="sub" style="margin-top:6px">
+      Road maintenance, infrastructure, and county services.
+    </p>
+  </article>
+
+  <article class="item" aria-label="Planning and Zoning Department">
+    <h3 class="itemTitle">
+      <a href="departments/planning-zoning.html">Planning & Zoning</a>
+    </h3>
+    <div class="meta">
+      <a href="tel:17065550106" class="phone-link">(706) 555-0106</a>
+    </div>
+    <div class="meta">
+      <span>Hours: 8:30 AM – 5:00 PM</span>
+    </div>
+    <p class="sub" style="margin-top:6px">
+      Land use, development applications, and zoning compliance.
+    </p>
+  </article>
+
+  <article class="item" aria-label="Emergency Management Department">
+    <h3 class="itemTitle">
+      <a href="departments/emergency-management.html">Emergency Management</a>
+    </h3>
+    <div class="meta">
+      <a href="tel:17065550107" class="phone-link">(706) 555-0107</a>
+    </div>
+    <div class="meta">
+      <span>Hours: 8:30 AM – 5:00 PM</span>
+    </div>
+    <p class="sub" style="margin-top:6px">
+      Emergency preparedness, disaster response, and public safety coordination.
+    </p>
+  </article>
+
+</div>
+
+
+</div>
+
+
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>© 2026 Hart County, Georgia (Demo Prototype)</div>
+          <div>Directory entries are placeholders for administration review</div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+      <div>
+        <div class="tTitle">Title</div>
+        <div class="tBody">Body</div>
+      </div>
+      <button id="toastClose" class="btn ghost" type="button" aria-label="Close message">Close</button>
+    </div>
+  </div>
+
+  <!-- Optional: simple client-side filter for demo -->
+  <script>
+    (function(){
+      const search = document.getElementById('dirSearch');
+      const list = document.getElementById('directoryList');
+      if(!search || !list) return;
+
+      search.addEventListener('input', () => {
+        const q = search.value.trim().toLowerCase();
+        list.querySelectorAll('.item').forEach(card => {
+          const text = card.innerText.toLowerCase();
+          card.style.display = text.includes(q) ? '' : 'none';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

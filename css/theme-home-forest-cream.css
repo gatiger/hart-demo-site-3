@@ -1,0 +1,13 @@
+/* Homepage-only theme: Forest Green + Cream (outdoors/community) */
+:root{
+  --accent: #1f5f4a;
+  --accent-dark: #174739;
+  --accent-soft: #eaf4f1;
+
+  --focus: #ff7a18;
+  --focus-soft: rgba(255,122,24,.25);
+
+  --text: rgba(20, 32, 28, .92);
+  --muted: rgba(20, 32, 28, .70);
+  --border: rgba(20, 32, 28, .14);
+}

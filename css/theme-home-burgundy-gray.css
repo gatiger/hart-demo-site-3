@@ -1,0 +1,13 @@
+/* Homepage-only theme: Burgundy + Neutral Gray (courthouse/traditional) */
+:root{
+  --accent: #7a1f2b;
+  --accent-dark: #5a161f;
+  --accent-soft: #f4e9ec;
+
+  --focus: #ff7a18;
+  --focus-soft: rgba(255,122,24,.25);
+
+  --text: rgba(33, 20, 22, .92);
+  --muted: rgba(33, 20, 22, .70);
+  --border: rgba(33, 20, 22, .14);
+}

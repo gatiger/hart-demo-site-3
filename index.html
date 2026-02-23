@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hart County, GA (Demo) • News & Meetings</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Quintessential&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/alerts.css">
+	
+	<script src="/js/alerts.js" defer></script>
+    <script src="/js/app.js" defer></script>
+  
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+  <div class="navRow">
+    <a class="brand brandLink" href="index.html">
+      <div class="seal">
+        <img src="./assets/hart_seal.svg" alt="Hart County, Georgia official seal">
+      </div>
+      <div class="brandText">
+        <div class="kicker">Hart County, Georgia</div>
+        <div class="title">PAGE TITLE HERE</div>
+      </div>
+    </a>
+
+    <!-- Desktop top navigation -->
+    <nav class="topNav" aria-label="Primary">
+      <a href="directory.html">Directory</a>
+      <a href="departments.html">Departments</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About</a>
+      <a href="paynes-creek.html">Paynes Creek</a>
+      <a href="news.html">News</a>
+      <a href="meetings.html">Meetings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="btn menuBtn" type="button"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            id="menuBtn">
+      Menu
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu panel (add right after header) -->
+<div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+<aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+  <div class="menuPanelHead">
+    <div class="menuPanelTitle">Menu</div>
+    <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+
+  <nav class="menuNav" aria-label="Primary mobile">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="departments.html">Departments</a>
+    <a href="commissioners.html">Commissioners</a>
+    <a href="employment.html">Employment</a>
+    <a href="about.html">About Hart County</a>
+    <a href="paynes-creek.html">Paynes Creek Campground</a>
+    <hr>
+    <a href="news.html">News</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+
+
+ <main id="main" class="container" tabindex="-1">
+  <!-- Full-width alerts stays on top -->
+  <div id="alertHolder"></div>
+
+  <section class="hero" style="margin-top:14px" aria-label="Overview">
+        <div class="heroTop">
+          <div>
+            <h1>News, alerts, and meeting information — in one place.</h1>
+            <p>
+              This is a demo-only prototype to show how Hart County can publish announcements,
+              highlight urgent alerts, and provide public meeting packets in a modern, easy-to-navigate format.
+            </p>
+			<!-- ✅ ADD PAGE TOOLS RIGHT HERE -->
+      <div class="pageTools" aria-label="Page tools">
+        <label class="sr-only" for="siteSearch">Search</label>
+        <input id="siteSearch" class="field" type="text" placeholder="Search this page…" />
+
+        <div class="btnRow">
+          <a class="btn" href="directory.html">Find a Department</a>
+          <a class="btn" href="contact.html">Report an Issue</a>
+          <button class="btn ghost" type="button"
+            data-toast="Demo: Accessibility|Would open an accessibility help page.">
+            Accessibility
+          </button>
+        </div>
+      </div>
+      <!-- ✅ END PAGE TOOLS -->
+            <div class="badgeRow" aria-label="Highlights">
+              <div class="badge"><strong>Fast updates</strong> without clutter</div>
+              <div class="badge"><strong>Mobile friendly</strong> for citizens</div>
+              <div class="badge"><strong>Admin-ready</strong> layout</div>
+            </div>
+
+            <div class="btnRow">
+              <a class="btn primary" href="news.html">View all news</a>
+              <a class="btn" href="meetings.html">View meetings</a>
+              <button class="btn ghost" type="button" id="jumpToAlerts">
+              Alert area <small>demo</small>
+              </button>
+
+            </div>
+          </div>
+
+          <div class="card" style="min-width:280px; max-width:360px" aria-label="Quick actions">
+            <h2>Quick Actions</h2>
+            <p class="sub">Demo buttons (wired for presentation)</p>
+            <div class="btnRow">
+              <button class="btn" type="button" data-toast="Demo: Pay Taxes|Would open the payment portal.">Pay Taxes</button>
+              <button class="btn" type="button" data-toast="Demo: Service Directory|Would open the county services hub.">Service Directory</button>
+              <button class="btn" type="button" data-toast="Demo: Report an Issue|Would open a public issue form.">Report an Issue</button>
+              <button class="btn" type="button" data-toast="Demo: Emergency Info|Would open emergency resources.">Emergency Info</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWS PAGE: Alerts card (above everything else) -->
+<section class="card" aria-label="Active alerts" style="margin-top:16px">
+  <div class="cardHeader">
+    <div>
+      <h2>Active Alerts</h2>
+      <p class="sub">Urgent notices currently in effect</p>
+    </div>
+  </div>
+
+  <div id="newsAlerts"></div>
+</section>
+
+      <div class="homeTwoCol" aria-label="Announcements and meetings">
+<section class="card" aria-label="Latest announcements">
+  <div class="cardHeader">
+    <div>
+      <h2>Latest Announcements</h2>
+      <p class="sub">Most recent updates from News</p>
+    </div>
+
+    <div class="btnRow" aria-label="Announcement controls">
+      <button class="btn ghost" type="button" id="annPrev">Previous</button>
+      <button class="btn ghost" type="button" id="annNext">Next</button>
+      <button class="btn" type="button" id="annPause" aria-pressed="false">Pause</button>
+    </div>
+  </div>
+
+  <!-- Rotating item renders here -->
+  <div id="annRotator"
+       class="annRotator"
+       aria-live="polite"
+       aria-atomic="true">
+  </div>
+</section>
+
+      <section class="card" aria-label="Meetings">
+        <div class="cardHeader">
+          <div>
+            <h2>Meetings</h2>
+            <p class="sub">Upcoming meetings and agendas</p>
+          </div>
+          <div class="btnRow">
+            <a class="btn" href="meetings.html">View all</a>
+          </div>
+        </div>
+        <div id="meetingsMiniCal" class="miniCal" aria-label="Meetings calendar"></div>
+      </section>
+</div>
+
+      <footer class="footer">
+        <div>© 2026 Hart County, Georgia (Demo Prototype)(RT)</div>
+        <div>Administration: (706) 376-2024 • 800 Chandler Street • Hartwell, GA 30643</div>
+      </footer>
+</main>
+

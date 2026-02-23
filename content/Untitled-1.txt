@@ -1,0 +1,19 @@
+{
+  "id": "...",
+  "title": "...",
+  "name": "...",        // optional
+  "url": "...",         // clickable title
+  "phone": "...",
+  "fax": "...",
+  "email": "...",
+  "hours": "...",
+  "description": "...",
+  "enabled": true
+}
+//example of directory entry
+//url goes under title/name depending on which one gets the link
+
+"phone": [
+  "(706) 555-1234",
+  "(706) 555-5678"
+]
