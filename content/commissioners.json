@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "id": "avery-brooks",
+      "name": "Avery Brooks",
+      "role": "Chair",
+      "district": "District 1",
+      "phone": "(706) 376-0201",
+      "phone_raw": "17063760201",
+      "email": "abrooks@hartcountyga.demo",
+      "photo": "./assets/commissioners/commissioner_1.png",
+      "bio": "Focuses on countywide planning, infrastructure priorities, and strengthening public services (demo text)."
+    },
+    {
+      "id": "dan-clemmons",
+      "name": "Dan Clemmons",
+      "role": "Vice-Chair",
+      "district": "District 2",
+      "phone": "(706) 376-0202",
+      "phone_raw": "17063760202",
+      "email": "dclemmons@hartcountyga.demo",
+      "photo": "./assets/commissioners/commissioner_2.png",
+      "bio": "Focuses on countywide planning, infrastructure priorities, and strengthening public services (demo text)."
+    }
+  ]
+}
