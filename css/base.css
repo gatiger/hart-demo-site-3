@@ -514,6 +514,76 @@ body.menuOpen{ overflow: hidden; }
   margin-top: 10px;
 }
 
+/* Enhanced announcement tile */
+.annTile{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#ffffff;
+  box-shadow: var(--shadow);
+  padding:16px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* subtle accent stripe */
+.annTile::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:6px;
+  background: var(--accent);
+}
+
+.annMetaRow{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.annDate{
+  font-size:12px;
+  color: var(--muted);
+  font-weight:800;
+}
+
+.annTile .annTitle{
+  margin:8px 0 6px;
+  font-size:18px;
+  font-weight:900;
+}
+
+.annTile .annBody{
+  color: var(--muted);
+  margin:0;
+  line-height:1.4;
+
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.annFooter{
+  margin-top:12px;
+}
+
+.annCta{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight:800;
+  text-decoration:none;
+}
+
+.annCta:hover{
+  background: var(--accent);
+  color:#fff;
+}
+
 .item{
   padding: 12px;
   border-radius: 16px;
