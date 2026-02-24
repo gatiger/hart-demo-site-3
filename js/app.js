@@ -742,4 +742,13 @@ renderMeetingsPage(meetings?.items || meetings || []);
     if (e.matches) setPaused(true);
   });
 }
+
+if (document.getElementById("annRotator")) {
+    initAnnouncementsFromNewsRotator({
+      newsUrl: "./content/news.json",
+      mountId: "annRotator",
+      maxItems: 5,
+      intervalMs: 7000
+    });
+  }
 });
