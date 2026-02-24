@@ -188,26 +188,28 @@ main{ scroll-margin-top: 140px; }
 /* Active nav link */
 .topNav a.is-active,
 .menuNav a.is-active{
-  transform: scale(1.06);
-  font-weight: 800;
   position: relative;
+  font-weight: 800;
+  border-radius: 10px;
+  background: rgba(0,0,0,.06);
 }
 
-/* Highlight ring */
+/* Inner border effect */
 .topNav a.is-active::after,
 .menuNav a.is-active::after{
-  content:"";
-  position:absolute;
-  inset:-6px -10px;
-  border-radius:12px;
-  border:2px solid rgba(255,122,24,.85);
-  pointer-events:none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid rgba(0,0,0,.25); /* neutral tone */
+  pointer-events: none;
 }
 
-/* Smooth hover/active transitions */
-.topNav a,
-.menuNav a{
-  transition: transform .15s ease, background .15s ease;
+/* Keep focus separate */
+.topNav a:focus-visible,
+.menuNav a:focus-visible{
+  outline: 3px solid rgba(255,122,24,.9); /* your accessibility orange */
+  outline-offset: 2px;
 }
 
 /* ✅ Menu button hidden on desktop even though it also has .btn */
