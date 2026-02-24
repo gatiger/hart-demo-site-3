@@ -191,7 +191,7 @@ main{ scroll-margin-top: 140px; }
   position: relative;
   font-weight: 800;
   border-radius: 10px;
-  background: rgba(0,0,0,.06);
+  background: rgba(252, 206, 4, 0.06);
 }
 
 /* Inner border effect */
