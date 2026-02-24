@@ -811,6 +811,44 @@ select:focus-visible{
   gap:12px;
   margin-bottom:10px;
 }
+
+/* --- Mini Calendar --- */
+.miniCal { ... }
+.miniCalHead { ... }
+.miniCalGrid { ... }
+
+/* ADD THIS RIGHT BELOW */
+
+.miniCalHeadLeft{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.miniCalNav{
+  display:flex;
+  gap:8px;
+  margin-top:2px;
+}
+
+.miniCalNavBtn{
+  width:34px;
+  height:34px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  cursor:pointer;
+}
+
+.miniCalNavBtn:hover{
+  background: rgba(255,255,255,.07);
+}
+
+.miniCalNavBtn:focus-visible{
+  outline: 3px solid rgba(255,122,24,.9);
+  outline-offset: 2px;
+}
 .miniCalTitle{
   font-weight:700;
   letter-spacing:.2px;
