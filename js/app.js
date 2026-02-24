@@ -252,7 +252,6 @@ const MEETING_TYPE_META = {
 // Which types appear in the legend (order matters)
 const MEETING_LEGEND_TYPES = ["commissioners", "assessors", "planning", "zoning"];
 
-// Render mini calendar into #meetingsMiniCal
 function renderMeetingsMiniCalendar(meetings, opts = {}) {
   const {
     mountId = "meetingsMiniCal",
@@ -265,7 +264,11 @@ function renderMeetingsMiniCalendar(meetings, opts = {}) {
   const mount = document.getElementById(mountId);
   if (!mount) return;
 
-  // Build map: YYYY-MM-DD -> meetings[]
+  // Persist view month on the element
+  const initialMonth = new Date(monthDate.getFullYear(), monthDate.getMonth(), 1);
+  if (!mount._miniCalState) mount._miniCalState = { viewMonth: initialMonth };
+
+  // Map: YYYY-MM-DD -> meetings[]
   const byDay = new Map();
   (meetings || []).forEach(m => {
     const raw = m?.date;
@@ -275,77 +278,98 @@ function renderMeetingsMiniCalendar(meetings, opts = {}) {
     byDay.get(key).push(m);
   });
 
-  const year = monthDate.getFullYear();
-  const month = monthDate.getMonth(); // 0-11
-  const first = new Date(year, month, 1);
-  const last  = new Date(year, month + 1, 0);
-  const daysInMonth = last.getDate();
-
-  const monthLabel = first.toLocaleString(undefined, { month: "long", year: "numeric" });
-
   const dowSunFirst = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const dowMonFirst = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const dow = weekStartsOnMonday ? dowMonFirst : dowSunFirst;
 
-  // Determine offset (blank cells before day 1). JS getDay(): 0=Sun..6=Sat
-  let offset = first.getDay();
-  if (weekStartsOnMonday) offset = (offset + 6) % 7; // convert to Mon-first index
+  const render = () => {
+    const view = mount._miniCalState.viewMonth;
+    const year = view.getFullYear();
+    const month = view.getMonth();
 
-  const legendHtml = showLegend ? buildMeetingsLegendHtml() : "";
+    const first = new Date(year, month, 1);
+    const last  = new Date(year, month + 1, 0);
+    const daysInMonth = last.getDate();
 
-  let html = `
-    <div class="miniCalHead">
-      <div class="miniCalTitle">${escapeHtml(monthLabel)}</div>
-      ${legendHtml}
-    </div>
+    const monthLabel = first.toLocaleString(undefined, { month: "long", year: "numeric" });
 
-    <div class="miniCalGrid" role="grid" aria-label="${escapeHtml(monthLabel)} calendar">
-      ${dow.map(d => `<div class="miniCalDow" role="columnheader">${escapeHtml(d)}</div>`).join("")}
-  `;
+    // Offset for blanks
+    let offset = first.getDay(); // 0=Sun..6=Sat
+    if (weekStartsOnMonday) offset = (offset + 6) % 7;
 
-  // Leading blanks
-  for (let i = 0; i < offset; i++) {
-    html += `<div class="miniCalCell is-empty" role="gridcell" aria-disabled="true"></div>`;
-  }
+    const legendHtml = showLegend ? buildMeetingsLegendHtml() : "";
 
-  // Days
-  for (let day = 1; day <= daysInMonth; day++) {
-    const d = new Date(year, month, day);
-    const key = d.toISOString().slice(0, 10);
-    const dayMeetings = byDay.get(key) || [];
-    const hasMeetings = dayMeetings.length > 0;
-
-    const prettyDate = d.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
-
-    if (hasMeetings) {
-      const typesForDay = [...new Set(dayMeetings.map(m => (m?.type || "default")))];
-      const dotsHtml = buildDotsHtml(typesForDay);
-
-      const titles = dayMeetings.map(m => m?.title).filter(Boolean);
-      const ariaLabel = titles.length
-        ? `${prettyDate}. ${dayMeetings.length} meeting${dayMeetings.length > 1 ? "s" : ""}: ${titles.join("; ")}.`
-        : `${prettyDate}. ${dayMeetings.length} meeting${dayMeetings.length > 1 ? "s" : ""}.`;
-
-      html += `
-        <a class="miniCalCell is-event"
-           role="gridcell"
-           href="${escapeHtml(dayLink)}"
-           aria-label="${escapeHtml(ariaLabel)}">
-          <span class="miniCalDayNum">${day}</span>
-          ${dotsHtml}
-        </a>
-      `;
-    } else {
-      html += `
-        <div class="miniCalCell" role="gridcell" aria-label="${escapeHtml(prettyDate)}">
-          <span class="miniCalDayNum">${day}</span>
+    let html = `
+      <div class="miniCalHead">
+        <div class="miniCalHeadLeft">
+          <div class="miniCalTitle">${escapeHtml(monthLabel)}</div>
+          <div class="miniCalNav" aria-label="Calendar navigation">
+            <button type="button" class="miniCalNavBtn" data-cal-prev aria-label="Previous month">‹</button>
+            <button type="button" class="miniCalNavBtn" data-cal-next aria-label="Next month">›</button>
+          </div>
         </div>
-      `;
-    }
-  }
+        ${legendHtml}
+      </div>
 
-  html += `</div>`;
-  mount.innerHTML = html;
+      <div class="miniCalGrid" role="grid" aria-label="${escapeHtml(monthLabel)} calendar">
+        ${dow.map(d => `<div class="miniCalDow" role="columnheader">${escapeHtml(d)}</div>`).join("")}
+    `;
+
+    for (let i = 0; i < offset; i++) {
+      html += `<div class="miniCalCell is-empty" role="gridcell" aria-disabled="true"></div>`;
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const d = new Date(year, month, day);
+      const key = d.toISOString().slice(0, 10);
+      const dayMeetings = byDay.get(key) || [];
+      const hasMeetings = dayMeetings.length > 0;
+
+      const prettyDate = d.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+
+      if (hasMeetings) {
+        const typesForDay = [...new Set(dayMeetings.map(m => (m?.type || "default")))];
+        const dotsHtml = buildDotsHtml(typesForDay);
+
+        const titles = dayMeetings.map(m => m?.title).filter(Boolean);
+        const ariaLabel = titles.length
+          ? `${prettyDate}. ${dayMeetings.length} meeting${dayMeetings.length > 1 ? "s" : ""}: ${titles.join("; ")}.`
+          : `${prettyDate}. ${dayMeetings.length} meeting${dayMeetings.length > 1 ? "s" : ""}.`;
+
+        html += `
+          <a class="miniCalCell is-event"
+             role="gridcell"
+             href="${escapeHtml(dayLink)}"
+             aria-label="${escapeHtml(ariaLabel)}">
+            <span class="miniCalDayNum">${day}</span>
+            ${dotsHtml}
+          </a>
+        `;
+      } else {
+        html += `
+          <div class="miniCalCell" role="gridcell" aria-label="${escapeHtml(prettyDate)}">
+            <span class="miniCalDayNum">${day}</span>
+          </div>
+        `;
+      }
+    }
+
+    html += `</div>`;
+    mount.innerHTML = html;
+
+    // Hook up nav
+    mount.querySelector("[data-cal-prev]")?.addEventListener("click", () => {
+      mount._miniCalState.viewMonth = new Date(year, month - 1, 1);
+      render();
+    });
+
+    mount.querySelector("[data-cal-next]")?.addEventListener("click", () => {
+      mount._miniCalState.viewMonth = new Date(year, month + 1, 1);
+      render();
+    });
+  };
+
+  render();
 }
 
 function buildMeetingsLegendHtml() {
