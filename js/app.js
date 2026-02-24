@@ -451,7 +451,97 @@ function renderMeetingsMini(items){
       }).join("")}
     </div>
   `;
+    }
+
+  function renderMeetingsPage(items){
+  const upcomingEl = document.getElementById("upcomingMeetings");
+  const pastEl = document.getElementById("pastMeetings");
+  if(!upcomingEl && !pastEl) return;
+
+  const safe = (v) => (v === undefined || v === null) ? "" : String(v).trim();
+  const parseDate = (v) => {
+    const s = safe(v);
+    // Expect ISO like 2026-03-10
+    const d = new Date(s);
+    return Number.isNaN(d.getTime()) ? null : d;
+  };
+
+  const all = (items || [])
+    .filter(m => m && m.enabled !== false)
+    .slice()
+    .sort((a,b) => (parseDate(a.date)?.getTime()||0) - (parseDate(b.date)?.getTime()||0));
+
+  const isUpcoming = (m) => String(m.status || "Upcoming").toLowerCase() === "upcoming";
+  const upcoming = all.filter(isUpcoming);
+  const past = all.filter(m => !isUpcoming(m)).reverse(); // newest past first
+
+  const linkAttrs = (href) => {
+    const h = safe(href);
+    if(!h) return "";
+    const isExternal = /^https?:\/\//i.test(h);
+    return isExternal ? `target="_blank" rel="noopener noreferrer"` : "";
+  };
+
+  const renderList = (list) => `
+    <div class="list">
+      ${list.map(m => {
+        const title = safe(m.title || "Meeting");
+        const date  = safe(m.date || "");
+        const time  = safe(m.time || "");
+        const loc   = safe(m.location || "");
+
+        const agenda = safe(m.agenda_url || m.agenda || "");
+        const packet = safe(m.packet_url || m.packet || "");
+        const minutes = safe(m.minutes_url || m.minutes || "");
+        const stream = safe(m.stream_url || m.watch || m.video_url || "");
+
+        return `
+          <article class="item" aria-label="${escapeHtml(title)}">
+            <div class="itemTop">
+              <h3 class="itemTitle">${escapeHtml(title)}</h3>
+              ${m.type ? `<span class="tag">${escapeHtml(m.type)}</span>` : ``}
+            </div>
+
+            ${(date || time || loc) ? `
+              <div class="meta">
+                ${date ? `<span>${escapeHtml(date)}</span>` : ``}
+                ${(date && time) ? `<span>•</span>` : ``}
+                ${time ? `<span>${escapeHtml(time)}</span>` : ``}
+                ${((date || time) && loc) ? `<span>•</span>` : ``}
+                ${loc ? `<span>${escapeHtml(loc)}</span>` : ``}
+              </div>
+            ` : ``}
+
+            ${(agenda || packet || minutes || stream) ? `
+              <div class="meta" style="margin-top:10px">
+                ${agenda ? `<a class="link" href="${agenda}" ${linkAttrs(agenda)}>Agenda</a>` : ``}
+                ${(agenda && packet) ? `<span>•</span>` : ``}
+                ${packet ? `<a class="link" href="${packet}" ${linkAttrs(packet)}>Packet</a>` : ``}
+                ${((agenda || packet) && minutes) ? `<span>•</span>` : ``}
+                ${minutes ? `<a class="link" href="${minutes}" ${linkAttrs(minutes)}>Minutes</a>` : ``}
+                ${((agenda || packet || minutes) && stream) ? `<span>•</span>` : ``}
+                ${stream ? `<a class="link" href="${stream}" ${linkAttrs(stream)}>Watch</a>` : ``}
+              </div>
+            ` : ``}
+          </article>
+        `;
+      }).join("")}
+    </div>
+  `;
+
+  if(upcomingEl){
+    upcomingEl.innerHTML = upcoming.length
+      ? renderList(upcoming)
+      : `<p class="sub">No upcoming meetings are posted yet.</p>`;
+  }
+
+  if(pastEl){
+    pastEl.innerHTML = past.length
+      ? renderList(past)
+      : `<p class="sub">No past meetings are posted yet.</p>`;
+  }
 }
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   initMobileMenu();
@@ -483,6 +573,8 @@ if (document.getElementById("meetingsMiniCal")) {
     dayLink: "meetings.html"
   });
 }
+
+renderMeetingsPage(meetings?.items || meetings || []);
 
   // Page-scoped content: only load JSON when the page declares it
   const dirEl = document.getElementById("directoryList");
