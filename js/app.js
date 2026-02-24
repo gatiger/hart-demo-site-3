@@ -570,6 +570,18 @@ function renderMeetingsMini(items){
 document.addEventListener("DOMContentLoaded", async () => {
   initMobileMenu();
 
+const currentPath = window.location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".topNav a, .menuNav a").forEach(link => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    if (href === currentPath) {
+      link.classList.add("is-active");
+      link.setAttribute("aria-current", "page");
+    }
+  });
+
   // Use relative paths (plays nicer on a county server subfolder)
   const site = await loadJSON("./content/site.json");
   const alerts = await loadJSON("./content/alerts.json");
