@@ -20,9 +20,10 @@
       "title": "Tax Reminder",
       "message": "Property tax payments are due March 31.",
       "link": { "label": "Pay / Details", "href": "/tax-commissioner.html" },
-      "dismissible": true,
+      "dismissible": false,
       "end": "2026-03-31T23:59:00-05:00"
     }
   ]
 
 }
+
