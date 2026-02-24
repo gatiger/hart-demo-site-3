@@ -693,13 +693,22 @@ renderMeetingsPage(meetings?.items || meetings || []);
     const url = safe(it.url || it.link || "");
 
     mount.innerHTML = `
-      <article class="annItem">
-        <h3 class="annTitle">${title}</h3>
-        <div class="annMeta">${date.getTime() ? fmtDate(date) : ""}</div>
-        ${summary ? `<p class="annBody">${summary}</p>` : ""}
-        ${url ? `<div style="margin-top:10px"><a class="link" href="${url}">Read more</a></div>` : ""}
-      </article>
-    `;
+  <article class="annTile">
+    <div class="annMetaRow">
+      ${date.getTime() ? `<time class="annDate">${fmtDate(date)}</time>` : ""}
+    </div>
+
+    <h3 class="annTitle">${title}</h3>
+
+    ${summary ? `<p class="annBody">${summary}</p>` : ""}
+
+    ${url ? `
+      <div class="annFooter">
+        <a class="annCta" href="${url}">Read more →</a>
+      </div>
+    ` : ""}
+  </article>
+`;
   }
 
   function stop() {
