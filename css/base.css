@@ -185,6 +185,31 @@ main{ scroll-margin-top: 140px; }
   box-shadow: 0 0 0 4px var(--focus-soft);
 }
 
+/* Active nav link */
+.topNav a.is-active,
+.menuNav a.is-active{
+  transform: scale(1.06);
+  font-weight: 800;
+  position: relative;
+}
+
+/* Highlight ring */
+.topNav a.is-active::after,
+.menuNav a.is-active::after{
+  content:"";
+  position:absolute;
+  inset:-6px -10px;
+  border-radius:12px;
+  border:2px solid rgba(255,122,24,.85);
+  pointer-events:none;
+}
+
+/* Smooth hover/active transitions */
+.topNav a,
+.menuNav a{
+  transition: transform .15s ease, background .15s ease;
+}
+
 /* ✅ Menu button hidden on desktop even though it also has .btn */
 .btn.menuBtn{ display:none !important; }
 
@@ -812,19 +837,19 @@ select:focus-visible{
   margin-bottom:10px;
 }
 
-/* --- Mini Calendar --- */
-.miniCal { ... }
-.miniCalHead { ... }
-.miniCalGrid { ... }
-
-/* ADD THIS RIGHT BELOW */
-
+/* NEW: wraps title + nav buttons */
 .miniCalHeadLeft{
   display:flex;
   align-items:flex-start;
   gap:10px;
 }
 
+.miniCalTitle{
+  font-weight:700;
+  letter-spacing:.2px;
+}
+
+/* NEW: month nav buttons */
 .miniCalNav{
   display:flex;
   gap:8px;
@@ -841,17 +866,11 @@ select:focus-visible{
   cursor:pointer;
 }
 
-.miniCalNavBtn:hover{
-  background: rgba(255,255,255,.07);
-}
+.miniCalNavBtn:hover{ background: rgba(255,255,255,.07); }
 
 .miniCalNavBtn:focus-visible{
   outline: 3px solid rgba(255,122,24,.9);
   outline-offset: 2px;
-}
-.miniCalTitle{
-  font-weight:700;
-  letter-spacing:.2px;
 }
 
 /* --- Legend --- */
@@ -888,9 +907,9 @@ select:focus-visible{
 /* --- Cells --- */
 .miniCalCell{
   position:relative;
-  min-height: 44px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
+  min-height:44px;
+  border-radius:14px;
+  border:1px solid var(--border);
   background: rgba(255,255,255,.04);
   display:flex;
   align-items:flex-start;
@@ -909,21 +928,14 @@ select:focus-visible{
   font-weight:700;
   font-size:14px;
 }
-
-.miniCalCell.is-event{
-  box-shadow: 0 12px 30px rgba(0,0,0,.25);
-}
-
-.miniCalCell:hover{
-  background: rgba(255,255,255,.06);
-}
-
+.miniCalCell.is-event{ box-shadow: 0 12px 30px rgba(0,0,0,.25); }
+.miniCalCell:hover{ background: rgba(255,255,255,.06); }
 .miniCalCell:focus-visible{
   outline: 3px solid rgba(255,122,24,.9);
-  outline-offset: 2px;
+  outline-offset:2px;
 }
 
-/* --- Dots (bottom-left) --- */
+/* --- Dots --- */
 .miniCalDots{
   position:absolute;
   left:10px;
