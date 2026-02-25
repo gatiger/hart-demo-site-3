@@ -732,7 +732,7 @@ mount.innerHTML = `
       <p class="annBody clamp2" id="${bodyId}">
         ${summary}
       </p>
-      <button class="annExpandBtn"
+      <button class="btn ghost annExpandBtn"
               type="button"
               data-expand="${bodyId}"
               aria-expanded="false"
@@ -827,6 +827,31 @@ if (document.getElementById("annRotator")) {
   function renderCommissioners(items){
   const mount = document.getElementById("commissionersList");
   if(!mount) return;
+
+  if (!mount.dataset.expandWired) {
+    mount.addEventListener("click", (e) => {
+      const btn = e.target.closest(".annExpandBtn");
+      if (!btn) return;
+
+      const bodyId = btn.getAttribute("data-expand");
+      const p = document.getElementById(bodyId);
+      if (!p) return;
+
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+
+      if (expanded) {
+        p.classList.add("clamp2");
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = "Expand";
+      } else {
+        p.classList.remove("clamp2");
+        btn.setAttribute("aria-expanded", "true");
+        btn.textContent = "Collapse";
+      }
+    });
+
+    mount.dataset.expandWired = "1";
+  }
 
   const safe = (v)=> (v===undefined||v===null) ? "" : String(v).trim();
 
