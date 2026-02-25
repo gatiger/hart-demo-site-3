@@ -557,10 +557,12 @@ body.menuOpen{ overflow: hidden; }
   color: var(--muted);
   margin:0;
   line-height:1.4;
+}
 
+.annBody.clamp2{
   display:-webkit-box;
-  -webkit-line-clamp:2;
   -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
   overflow:hidden;
 }
 
