@@ -213,6 +213,7 @@ function renderNews(items){
   const visible = (items || []).filter(n => n.enabled !== false);
 
   list.innerHTML = visible.map(n => {
+    initNewsBodyExpanders(list);
     const title = safe(n.title);
     const date  = safe(n.date);
     const type  = safe(n.type);
@@ -638,6 +639,32 @@ renderMeetingsPage(meetings?.items || meetings || []);
   const mount = document.getElementById(mountId);
   if (!mount) return;
 
+  // Expand/collapse handler (one-time, event delegation)
+if (!mount.dataset.expandWired) {
+  mount.addEventListener("click", (e) => {
+    const btn = e.target.closest(".annExpandBtn");
+    if (!btn) return;
+
+    const bodyId = btn.getAttribute("data-expand");
+    const p = document.getElementById(bodyId);
+    if (!p) return;
+
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+
+    if (expanded) {
+      p.classList.add("clamp2");
+      btn.setAttribute("aria-expanded", "false");
+      btn.textContent = "Expand";
+    } else {
+      p.classList.remove("clamp2");
+      btn.setAttribute("aria-expanded", "true");
+      btn.textContent = "Collapse";
+    }
+  });
+
+  mount.dataset.expandWired = "1";
+}
+
   const prevBtn = document.getElementById("annPrev");
   const nextBtn = document.getElementById("annNext");
   const pauseBtn = document.getElementById("annPause");
@@ -692,7 +719,9 @@ renderMeetingsPage(meetings?.items || meetings || []);
     const summary = safe(it.summary || it.excerpt || it.description || "");
     const url = safe(it.url || it.link || "");
 
-    mount.innerHTML = `
+    const bodyId = `annBody-${i}`;
+
+mount.innerHTML = `
   <article class="annTile">
     <div class="annMetaRow">
       ${date.getTime() ? `<time class="annDate">${fmtDate(date)}</time>` : ""}
@@ -700,7 +729,19 @@ renderMeetingsPage(meetings?.items || meetings || []);
 
     <h3 class="annTitle">${title}</h3>
 
-    ${summary ? `<p class="annBody">${summary}</p>` : ""}
+    ${summary ? `
+      <p class="annBody clamp2" id="${bodyId}">
+        ${summary}
+      </p>
+      <button class="annExpandBtn"
+              type="button"
+              data-expand="${bodyId}"
+              aria-expanded="false"
+              aria-controls="${bodyId}"
+              hidden>
+        Expand
+      </button>
+    ` : ""}
 
     ${url ? `
       <div class="annFooter">
@@ -709,6 +750,17 @@ renderMeetingsPage(meetings?.items || meetings || []);
     ` : ""}
   </article>
 `;
+
+// Show Expand button only if content overflows 2 lines
+if (summary) {
+  requestAnimationFrame(() => {
+    const p = document.getElementById(bodyId);
+    const btn = mount.querySelector(`.annExpandBtn[data-expand="${bodyId}"]`);
+    if (!p || !btn) return;
+
+    btn.hidden = !(p.scrollHeight > p.clientHeight + 1);
+  });
+}
   }
 
   function stop() {
