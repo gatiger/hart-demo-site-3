@@ -213,7 +213,6 @@ function renderNews(items){
   const visible = (items || []).filter(n => n.enabled !== false);
 
   list.innerHTML = visible.map(n => {
-    initNewsBodyExpanders(list);
     const title = safe(n.title);
     const date  = safe(n.date);
     const type  = safe(n.type);
@@ -716,7 +715,7 @@ if (!mount.dataset.expandWired) {
     const it = items[i] || {};
     const title = safe(it.title || it.headline || "Update");
     const date = parseDate(it.date);
-    const summary = safe(it.summary || it.excerpt || it.description || "");
+    const summary = safe(it.body || it.summary || it.excerpt || it.description || "");
     const url = safe(it.url || it.link || "");
 
     const bodyId = `annBody-${i}`;
