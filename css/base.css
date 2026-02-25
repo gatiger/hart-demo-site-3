@@ -584,6 +584,29 @@ body.menuOpen{ overflow: hidden; }
   color:#fff;
 }
 
+/* Clamp announcement body to 2 lines (with Expand) */
+.annBody.clamp2{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+}
+
+.annExpandBtn{
+  margin-top:10px;
+  padding:6px 10px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background: rgba(0,0,0,.03);
+  color: var(--text);
+  font-weight:800;
+  cursor:pointer;
+}
+
+.annExpandBtn:hover{
+  background: rgba(0,0,0,.06);
+}
+
 .item{
   padding: 12px;
   border-radius: 16px;
