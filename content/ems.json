@@ -60,64 +60,63 @@
       },
       {
         "enabled": true,
-        "name": "John Smith",
-        "title": "Deputy Director",
-        "phone": "(706) 555-0102",
-        "fax": "(706) 555-0199",
+        "name": "Tony Jordan",
+        "title": "Operations Manager",
+        "phone": "",
+        "fax": "",
         "photo": {
-          "src": "assets/ems/staff2.jpg",
-          "alt": "Portrait of John Smith"
+          "src": "/assets/tony_jordan.png",
+          "alt": "Portrait of Tony Jordan"
         }
       },
       {
         "enabled": true,
-        "name": "Alex Johnson",
-        "title": "Training Coordinator",
-        "phone": "(706) 555-0103",
-        "fax": "(706) 555-0199",
+        "name": "April Clem",
+        "title": "Administration Specialist",
+        "phone": "(706) 856-5313",
+        "fax": "(706) 376-3974",
         "photo": {
-          "src": "assets/ems/staff3.jpg",
-          "alt": "Portrait of Alex Johnson"
+          "src": "/assets/april_clem.png",
+          "alt": "Portrait of April Clem"
         }
       },
       {
         "enabled": true,
-        "name": "Sam Lee",
-        "title": "Operations Supervisor",
-        "phone": "(706) 555-0104",
-        "fax": "(706) 555-0199",
+        "name": "Ronald Dutton",
+        "title": "Shift Supervisor",
+        "phone": "",
+        "fax": "",
         "photo": {
-          "src": "assets/ems/staff4.jpg",
-          "alt": "Portrait of Sam Lee"
+          "src": "/assets/ronald_dutton.png",
+          "alt": "Portrait of Ronald Dutton"
         }
       },
       {
         "enabled": true,
-        "name": "Taylor Brown",
-        "title": "Billing & Records",
-        "phone": "(706) 555-0105",
-        "fax": "(706) 555-0199",
+        "name": "Jess Eaton",
+        "title": "Shift Supervisor",
+        "phone": "",
+        "fax": "",
         "photo": {
-          "src": "assets/ems/staff5.jpg",
-          "alt": "Portrait of Taylor Brown"
+          "src": "/assets/jess_eaton.png",
+          "alt": "Portrait of Jess Eaton"
         }
       },
       {
         "enabled": true,
-        "name": "Jordan Davis",
-        "title": "Public Information",
-        "phone": "(706) 555-0106",
-        "fax": "(706) 555-0199",
+        "name": "Forrest Briggs",
+        "title": "Shift Supervisor",
+        "phone": "",
+        "fax": "",
         "photo": {
-          "src": "assets/ems/staff6.jpg",
-          "alt": "Portrait of Jordan Davis"
+          "src": "/assets/forrest_briggs.png",
+          "alt": "Portrait of Forrest Briggs"
         }
       }
     ]
   }
 
 }
-
 
 
 
