@@ -49,7 +49,7 @@
         "phone": "(706) 856-5314",
         "fax": "(706) 376-3974",
         "photo": {
-          "src": "/assets/mike_adams.png",
+          "src": "assets/mike_adams.png",
           "alt": "Portrait of Mike Adams"
         }
       },
@@ -112,6 +112,7 @@
   }
 
 }
+
 
 
 
