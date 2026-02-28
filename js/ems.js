@@ -32,13 +32,11 @@ function renderAbout(about){
 
 function renderHero(hero){
   const titleEl = document.getElementById("emsHeroTitle");
-  const textEl  = document.getElementById("emsHeroText");
   const leftEl  = document.getElementById("emsHeroLeft");
   const rightEl = document.getElementById("emsHeroRight");
   const ctasEl  = document.getElementById("emsHeroCtas");
 
   if(titleEl) titleEl.textContent = safeText(hero.title) || "Hart County EMS";
-  if(textEl)  textEl.textContent  = safeText(hero.text) || "";
 
   // Left image
   if(leftEl){
