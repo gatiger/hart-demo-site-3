@@ -6,8 +6,8 @@
     "text": "Our EMS team provides emergency medical response and patient care across Hart County. Use the quick actions below for common requests and contact options.",
 
     "leftImage": {
-      "src": "assets/ems/ems_left.jpg",
-      "alt": "EMS team preparing equipment"
+      "src": "assets/ems/ems_logo.svg",
+      "alt": "Hart County EMS logo"
     },
     "rightImage": {
       "src": "assets/ems/ems_right.jpg",
@@ -44,13 +44,13 @@
     "people": [
       {
         "enabled": true,
-        "name": "Jane Doe",
-        "title": "EMS Director",
-        "phone": "(706) 555-0101",
-        "fax": "(706) 555-0199",
+        "name": "Mike Adams,
+        "title": "Director",
+        "phone": "(706) 856-5314",
+        "fax": "(706) 376-3974",
         "photo": {
-          "src": "assets/ems/staff1.jpg",
-          "alt": "Portrait of Jane Doe"
+          "src": "assets/ems/mike_adams.png",
+          "alt": "Portrait of Mike Adams"
         }
       },
       {
