@@ -15,10 +15,19 @@ async function initEmsPage(){
 
     renderHero(data.hero || {});
     renderStaff(data.staff || {});
+    renderAbout(data.about || {});
   }catch(err){
     if(sub) sub.textContent = "Unable to load EMS content.";
     console.error(err);
   }
+}
+
+function renderAbout(about){
+  const titleEl = document.getElementById("emsAboutTitle");
+  const textEl  = document.getElementById("emsAboutText");
+
+  if(titleEl) titleEl.textContent = safeText(about.title) || "What EMS Does";
+  if(textEl)  textEl.textContent  = safeText(about.text) || "";
 }
 
 function renderHero(hero){
@@ -161,4 +170,5 @@ function escapeHtml(str){
 function escapeAttr(str){
   // same as escapeHtml for our use
   return escapeHtml(str);
+
 }
