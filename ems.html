@@ -10,41 +10,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Your existing global styles -->
-  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="base.css" />
   <!-- Page-specific -->
-  <link rel="stylesheet" href="css/ems.css" />
+  <link rel="stylesheet" href="ems.css" />
 
-  <script defer src="js/app.js"></script>
-  <script defer src="js/ems.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="ems.js"></script>
 </head>
 
 <body>
-  <!-- Keep your existing header/nav structure from other pages -->
-  <a class="skipLink" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="topbar">
-    <div class="topbarInner">
-      <a class="brand" href="index.html">
-        <img class="seal" src="assets/hart_seal.png" alt="Hart County seal" />
+    <div class="navRow">
+      <a class="brand brandLink" href="index.html">
+        <div class="seal">
+          <img src="./assets/hart_seal.svg" alt="Hart County, Georgia official seal">
+        </div>
         <div class="brandText">
-          <div class="brandTitle">Hart County, Georgia</div>
-          <div class="brandTag">Demo Website</div>
+          <div class="kicker">Hart County, Georgia</div>
+          <div class="title">Emergency Medical Services</div>
         </div>
       </a>
 
-      <button class="menuBtn" type="button" aria-label="Open menu" aria-controls="menuPanel" aria-expanded="false">
+      <!-- Desktop top navigation -->
+      <nav class="topNav" aria-label="Primary">
+        <a href="directory.html">Directory</a>
+        <a href="departments.html">Departments</a>
+        <a href="commissioners.html">Commissioners</a>
+        <a href="employment.html">Employment</a>
+        <a href="about.html">About</a>
+        <a href="paynes-creek.html">Paynes Creek</a>
+        <a href="news.html">News</a>
+        <a href="meetings.html">Meetings</a>
+        <a href="ems.html">EMS</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button class="btn menuBtn" type="button"
+              aria-controls="mobileMenu"
+              aria-expanded="false"
+              id="menuBtn">
         Menu
       </button>
-
-      <nav class="navBtns" aria-label="Primary">
-        <a class="btn ghost" href="index.html">Home</a>
-        <a class="btn ghost" href="news.html">News</a>
-        <a class="btn ghost" href="meetings.html">Meetings</a>
-        <a class="btn ghost" href="directory.html">Directory</a>
-        <a class="btn" href="contact.html">Contact</a>
-      </nav>
     </div>
   </header>
+
+  <!-- Mobile menu panel -->
+  <div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+  <aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+    <div class="menuPanelHead">
+      <div class="menuPanelTitle">Menu</div>
+      <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+    </div>
+
+    <nav class="menuNav" aria-label="Primary mobile">
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="departments.html">Departments</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About Hart County</a>
+      <a href="paynes-creek.html">Paynes Creek Campground</a>
+      <hr>
+      <a href="news.html">News</a>
+      <a href="meetings.html">Meetings</a>
+      <a href="ems.html">EMS</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </aside>
 
   <!-- If your site uses a slide-out menu panel, keep it consistent with other pages -->
   <aside id="menuPanel" class="menuPanel" aria-hidden="true">
@@ -97,5 +133,4 @@
     </div>
   </footer>
 </body>
-
 </html>
