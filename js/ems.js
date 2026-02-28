@@ -145,7 +145,7 @@ function personCard(p){
   const title = safeText(p.title) || "";
   const phone = safeText(p.phone) || "";
   const fax = safeText(p.fax) || "";
-  const info  = safeText(person.info);
+  const info  = safeText(p.info);
   const imgSrc = safeText(p.photo?.src) || "";
   const imgAlt = safeText(p.photo?.alt) || `${name} photo`;
 
