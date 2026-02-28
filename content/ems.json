@@ -44,7 +44,7 @@
     "people": [
       {
         "enabled": true,
-        "name": "Mike Adams,
+        "name": "Mike Adams",
         "title": "Director",
         "phone": "(706) 856-5314",
         "fax": "(706) 376-3974",
@@ -110,4 +110,5 @@
       }
     ]
   }
+
 }
