@@ -39,6 +39,11 @@
     ]
   },
 
+  "about": {
+  "title": "EMS Mission Statement",
+  "text": "Hart County EMS is dedicated to providing exceptional medical services, delivered by a highly skilled, educated and professional staff. We will educate the community on our role in the response, treatment, and transport of the sick and injured as well as the prevention of injury and illness. We will do this in a fiscally responsible manner as an integral component of the community."
+},
+
   "staff": {
     "subtitle": "Tap a phone number to call from a mobile device. Fax numbers are listed for reference.",
     "people": [
@@ -106,16 +111,13 @@
         "photo": {
           "src": "assets/ems/staff6.jpg",
           "alt": "Portrait of Jordan Davis"
-        },
-        "about": {
-  "title": "EMS Mission Statement",
-  "text": "Hart County EMS is dedicated to providing exceptional medical services, delivered by a highly skilled, educated and professional staff. We will educate the community on our role in the response, treatment, and transport of the sick and injured as well as the prevention of injury and illness. We will do this in a fiscally responsible manner as an integral component of the community."
-}
+        }
       }
     ]
   }
 
 }
+
 
 
 
