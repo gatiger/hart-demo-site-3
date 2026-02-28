@@ -3,7 +3,12 @@
 
   "hero": {
     "title": "Hart County EMS",
-    "text": "Our EMS team provides emergency medical response and patient care across Hart County. Use the quick actions below for common requests and contact options.",
+    "address": {
+		"street": "800 Chandler Street",
+		"city": "Hartwell",
+		"state": "GA",
+		"zip": "30643"
+	},
 
     "leftImage": {
       "src": "assets/ems_logo.svg",
