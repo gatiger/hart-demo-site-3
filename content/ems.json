@@ -15,7 +15,7 @@
       "alt": "Hart County EMS logo"
     },
     "rightImage": {
-      "src": "assets/ems/ems_right.jpg",
+      "src": "assets/ems_text.svg",
       "alt": "Ambulance outside the station"
     },
 
@@ -120,6 +120,7 @@
   }
 
 }
+
 
 
 
