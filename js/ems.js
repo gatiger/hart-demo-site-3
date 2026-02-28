@@ -38,6 +38,13 @@ function renderHero(hero){
 
   if(titleEl) titleEl.textContent = safeText(hero.title) || "Hart County EMS";
 
+  console.log("HERO OBJECT:", hero);
+console.log("ADDRESS:", hero.address);
+console.log("ELS:", {
+  streetEl: !!document.getElementById("emsStreet"),
+  cityEl: !!document.getElementById("emsCityStateZip")
+});
+
     // Address fields (center column)
   const streetEl = document.getElementById("emsStreet");
   const cityEl   = document.getElementById("emsCityStateZip");
