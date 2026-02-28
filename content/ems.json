@@ -1,0 +1,113 @@
+{
+  "subtitle": "Information, contacts, and staff for Hart County Emergency Medical Services.",
+
+  "hero": {
+    "title": "Hart County EMS",
+    "text": "Our EMS team provides emergency medical response and patient care across Hart County. Use the quick actions below for common requests and contact options.",
+
+    "leftImage": {
+      "src": "assets/ems/ems_left.jpg",
+      "alt": "EMS team preparing equipment"
+    },
+    "rightImage": {
+      "src": "assets/ems/ems_right.jpg",
+      "alt": "Ambulance outside the station"
+    },
+
+    "buttons": [
+      {
+        "label": "Call 911 (Emergency)",
+        "href": "tel:911",
+        "variant": "primary",
+        "newTab": false,
+        "enabled": true
+      },
+      {
+        "label": "Non-Emergency Line",
+        "href": "tel:+17065551234",
+        "variant": "ghost",
+        "newTab": false,
+        "enabled": true
+      },
+      {
+        "label": "Request Records",
+        "href": "contact.html",
+        "variant": "ghost",
+        "newTab": false,
+        "enabled": true
+      }
+    ]
+  },
+
+  "staff": {
+    "subtitle": "Tap a phone number to call from a mobile device. Fax numbers are listed for reference.",
+    "people": [
+      {
+        "enabled": true,
+        "name": "Jane Doe",
+        "title": "EMS Director",
+        "phone": "(706) 555-0101",
+        "fax": "(706) 555-0199",
+        "photo": {
+          "src": "assets/ems/staff1.jpg",
+          "alt": "Portrait of Jane Doe"
+        }
+      },
+      {
+        "enabled": true,
+        "name": "John Smith",
+        "title": "Deputy Director",
+        "phone": "(706) 555-0102",
+        "fax": "(706) 555-0199",
+        "photo": {
+          "src": "assets/ems/staff2.jpg",
+          "alt": "Portrait of John Smith"
+        }
+      },
+      {
+        "enabled": true,
+        "name": "Alex Johnson",
+        "title": "Training Coordinator",
+        "phone": "(706) 555-0103",
+        "fax": "(706) 555-0199",
+        "photo": {
+          "src": "assets/ems/staff3.jpg",
+          "alt": "Portrait of Alex Johnson"
+        }
+      },
+      {
+        "enabled": true,
+        "name": "Sam Lee",
+        "title": "Operations Supervisor",
+        "phone": "(706) 555-0104",
+        "fax": "(706) 555-0199",
+        "photo": {
+          "src": "assets/ems/staff4.jpg",
+          "alt": "Portrait of Sam Lee"
+        }
+      },
+      {
+        "enabled": true,
+        "name": "Taylor Brown",
+        "title": "Billing & Records",
+        "phone": "(706) 555-0105",
+        "fax": "(706) 555-0199",
+        "photo": {
+          "src": "assets/ems/staff5.jpg",
+          "alt": "Portrait of Taylor Brown"
+        }
+      },
+      {
+        "enabled": true,
+        "name": "Jordan Davis",
+        "title": "Public Information",
+        "phone": "(706) 555-0106",
+        "fax": "(706) 555-0199",
+        "photo": {
+          "src": "assets/ems/staff6.jpg",
+          "alt": "Portrait of Jordan Davis"
+        }
+      }
+    ]
+  }
+}
