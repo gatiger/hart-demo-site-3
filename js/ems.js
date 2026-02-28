@@ -145,6 +145,7 @@ function personCard(p){
   const title = safeText(p.title) || "";
   const phone = safeText(p.phone) || "";
   const fax = safeText(p.fax) || "";
+  const info  = safeText(person.info);
   const imgSrc = safeText(p.photo?.src) || "";
   const imgAlt = safeText(p.photo?.alt) || `${name} photo`;
 
@@ -156,24 +157,36 @@ const faxLine = fax
   ? `<div>Fax: ${escapeHtml(fax)}</div>`
   : "";
 
-  return `
-    <article class="emsPerson">
-      <div class="emsPhoto">
-        ${imgSrc
-          ? `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(imgAlt)}" loading="lazy">`
-          : `<div class="muted">Add photo.src</div>`
-        }
+ return `
+  <article class="emsPerson">
+    <div class="emsPhoto">
+      ${imgSrc
+        ? `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(imgAlt)}" loading="lazy">`
+        : `<div class="muted">Add photo.src</div>`
+      }
+    </div>
+
+    <div class="emsBody">
+      <h3 class="emsName">${escapeHtml(name)}</h3>
+
+      ${title
+        ? `<div class="emsTitle">${escapeHtml(title)}</div>`
+        : `<div class="emsTitle muted"></div>`
+      }
+
+      <div class="emsMeta">
+        ${phoneLink}
+        ${faxLine}
       </div>
-      <div class="emsBody">
-        <h3 class="emsName">${escapeHtml(name)}</h3>
-        ${title ? `<div class="emsTitle">${escapeHtml(title)}</div>` : `<div class="emsTitle muted"> </div>`}
-        <div class="emsMeta">
-          ${phoneLink}
-          ${faxLine}
-        </div>
-      </div>
-    </article>
-  `;
+
+      ${info
+        ? `<div class="emsInfo">${escapeHtml(info)}</div>`
+        : ""
+      }
+
+    </div>
+  </article>
+`;
 }
 
 function safeText(v){
