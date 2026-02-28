@@ -589,8 +589,9 @@ const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
 
   // Alerts: prefer alerts.json, fall back to site.json if needed
-  if (alerts) window.renderAlert(alerts);
-  else if (site) window.renderAlert(site);
+  if (typeof window.renderAlert === "function") {
+  window.renderAlert(alerts || site);
+}
 
 
   // Homepage meetings card (optional)
