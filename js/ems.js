@@ -38,6 +38,23 @@ function renderHero(hero){
 
   if(titleEl) titleEl.textContent = safeText(hero.title) || "Hart County EMS";
 
+    // Address fields (center column)
+  const streetEl = document.getElementById("emsStreet");
+  const cityEl   = document.getElementById("emsCityStateZip");
+
+  if(streetEl){
+    streetEl.textContent = safeText(hero.address?.street) || "";
+  }
+
+  if(cityEl){
+    const city  = safeText(hero.address?.city);
+    const state = safeText(hero.address?.state);
+    const zip   = safeText(hero.address?.zip);
+
+    const cityState = [city, state].filter(Boolean).join(", ");
+    cityEl.textContent = cityState + (zip ? " " + zip : "");
+  }
+
   // Left image
   if(leftEl){
     leftEl.innerHTML = "";
