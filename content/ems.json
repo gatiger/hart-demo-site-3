@@ -62,8 +62,6 @@
         "enabled": true,
         "name": "Tony Jordan",
         "title": "Operations Manager",
-        "phone": "",
-        "fax": "",
         "photo": {
           "src": "/assets/tony_jordan.png",
           "alt": "Portrait of Tony Jordan"
