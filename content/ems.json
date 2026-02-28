@@ -78,6 +78,7 @@
         "title": "Administration Specialist",
         "phone": "(706) 856-5313",
         "fax": "(706) 376-3974",
+		  "info": "Please contact for billing questions.",
         "photo": {
           "src": "/assets/april_clem.jpg",
           "alt": "Portrait of April Clem"
@@ -120,6 +121,7 @@
   }
 
 }
+
 
 
 
