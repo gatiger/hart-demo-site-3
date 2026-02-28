@@ -126,8 +126,13 @@ function personCard(p){
   const imgSrc = safeText(p.photo?.src) || "";
   const imgAlt = safeText(p.photo?.alt) || `${name} photo`;
 
-  const phoneLink = phone ? `<a href="tel:${telHref(phone)}" aria-label="Call ${name}">${escapeHtml(phone)}</a>` : `<span class="muted">Phone: —</span>`;
-  const faxLine   = fax ? `<span>Fax: ${escapeHtml(fax)}</span>` : `<span class="muted">Fax: —</span>`;
+  const phoneLink = phone
+  ? `<div><a href="tel:${telHref(phone)}" aria-label="Call ${name}">${escapeHtml(phone)}</a></div>`
+  : "";
+
+const faxLine = fax
+  ? `<div>Fax: ${escapeHtml(fax)}</div>`
+  : "";
 
   return `
     <article class="emsPerson">
@@ -141,8 +146,8 @@ function personCard(p){
         <h3 class="emsName">${escapeHtml(name)}</h3>
         ${title ? `<div class="emsTitle">${escapeHtml(title)}</div>` : `<div class="emsTitle muted"> </div>`}
         <div class="emsMeta">
-          <div>${phoneLink}</div>
-          <div>${faxLine}</div>
+          ${phoneLink}
+          ${faxLine}
         </div>
       </div>
     </article>
