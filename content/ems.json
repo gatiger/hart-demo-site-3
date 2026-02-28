@@ -6,7 +6,7 @@
     "text": "Our EMS team provides emergency medical response and patient care across Hart County. Use the quick actions below for common requests and contact options.",
 
     "leftImage": {
-      "src": "assets/ems/ems_logo.svg",
+      "src": "assets/ems_logo.svg",
       "alt": "Hart County EMS logo"
     },
     "rightImage": {
@@ -112,6 +112,7 @@
   }
 
 }
+
 
 
 
