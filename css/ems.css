@@ -88,21 +88,22 @@
   }
 }
 
+/* Staff card */
 .emsPerson{
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
   background: rgba(255,255,255,.03);
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Photo section */
 .emsPhoto{
   width: 100%;
-  height: 190px;
-  background: rgba(255,255,255,.04);
-  display: grid;
-  place-items: center;
-  border-bottom: 1px solid var(--border);
+  aspect-ratio: 3 / 4;   /* portrait ratio */
+  overflow: hidden;
+  background: rgba(255,255,255,.05);
 }
 
 .emsPhoto img{
@@ -112,8 +113,13 @@
   display: block;
 }
 
+/* Text section */
 .emsBody{
-  padding: 12px 12px 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
 }
 
 .emsName{
@@ -123,30 +129,14 @@
 }
 
 .emsTitle{
-  margin: 4px 0 10px;
+  margin: 0;
   color: var(--muted);
-  font-weight: 600;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .emsMeta{
-  display: grid;
-  gap: 6px;
-}
-
-.emsMeta a,
-.emsMeta span{
-  color: var(--text);
-  text-decoration: none;
-}
-
-.emsMeta a:hover{
-  text-decoration: underline;
-}
-
-/* Ensure focus ring visibility (base.css likely already does this) */
-.emsMeta a:focus-visible{
-  outline: 3px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: 10px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
