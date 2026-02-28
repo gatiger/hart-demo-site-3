@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function initEmsPage(){
   const sub = document.getElementById("emsSub");
   try{
-    const res = await fetch("content/ems.json", { cache: "no-store" });
+    const res = await fetch("/content/ems.json", { cache: "no-store" });
     if(!res.ok) throw new Error("Failed to load content/ems.json");
     const data = await res.json();
 
@@ -172,3 +172,4 @@ function escapeAttr(str){
   return escapeHtml(str);
 
 }
+
