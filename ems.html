@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMS | Hart County</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Your existing global styles -->
+  <link rel="stylesheet" href="base.css" />
+  <!-- Page-specific -->
+  <link rel="stylesheet" href="ems.css" />
+
+  <script defer src="app.js"></script>
+  <script defer src="ems.js"></script>
+</head>
+
+<body>
+  <!-- Keep your existing header/nav structure from other pages -->
+  <a class="skipLink" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="topbarInner">
+      <a class="brand" href="index.html">
+        <img class="seal" src="assets/hart_seal.png" alt="Hart County seal" />
+        <div class="brandText">
+          <div class="brandTitle">Hart County, Georgia</div>
+          <div class="brandTag">Demo Website</div>
+        </div>
+      </a>
+
+      <button class="menuBtn" type="button" aria-label="Open menu" aria-controls="menuPanel" aria-expanded="false">
+        Menu
+      </button>
+
+      <nav class="navBtns" aria-label="Primary">
+        <a class="btn ghost" href="index.html">Home</a>
+        <a class="btn ghost" href="news.html">News</a>
+        <a class="btn ghost" href="meetings.html">Meetings</a>
+        <a class="btn ghost" href="directory.html">Directory</a>
+        <a class="btn" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- If your site uses a slide-out menu panel, keep it consistent with other pages -->
+  <aside id="menuPanel" class="menuPanel" aria-hidden="true">
+    <!-- (Your existing menu panel markup lives in other pages/app.js behavior) -->
+  </aside>
+
+  <main id="main" class="page">
+    <div class="pageHead">
+      <h1 class="pageTitle">Emergency Medical Services (EMS)</h1>
+      <p class="pageSub" id="emsSub">Loading…</p>
+    </div>
+
+    <!-- CARD 1 -->
+    <section class="card emsHero" aria-labelledby="emsHeroTitle">
+      <div class="emsHeroGrid">
+        <div class="emsHeroMedia" id="emsHeroLeft" aria-label="EMS photo left">
+          <!-- image injected -->
+        </div>
+
+        <div class="emsHeroContent">
+          <h2 id="emsHeroTitle" class="cardTitle">Loading…</h2>
+          <p class="emsHeroText" id="emsHeroText"></p>
+          <div class="emsHeroCtas" id="emsHeroCtas" aria-label="EMS quick actions">
+            <!-- buttons injected -->
+          </div>
+        </div>
+
+        <div class="emsHeroMedia" id="emsHeroRight" aria-label="EMS photo right">
+          <!-- image injected -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CARD 2 -->
+    <section class="card" aria-labelledby="emsStaffTitle">
+      <div class="cardHead">
+        <h2 id="emsStaffTitle" class="cardTitle">Staff & Contacts</h2>
+        <p class="cardSub" id="emsStaffSub"></p>
+      </div>
+
+      <div class="emsGrid" id="emsStaffGrid" aria-label="EMS staff list">
+        <!-- staff injected -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footerInner">
+      <span>© Hart County, Georgia</span>
+    </div>
+  </footer>
+</body>
+</html>
