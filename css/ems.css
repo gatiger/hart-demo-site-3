@@ -1,0 +1,152 @@
+/* EMS page additions — keeps your existing base.css look */
+
+.pageHead{
+  margin: 18px 0 14px;
+}
+.pageTitle{
+  margin: 0 0 6px;
+}
+.pageSub{
+  margin: 0;
+  color: var(--muted);
+}
+
+.emsHero{
+  padding: 16px;
+}
+.emsHeroGrid{
+  display: grid;
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* 3 columns on wide screens: left photo | centered text | right photo */
+@media (min-width: 900px){
+  .emsHeroGrid{
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 16px;
+  }
+}
+
+.emsHeroMedia{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 160px;
+  background: rgba(255,255,255,.04);
+  display: grid;
+  place-items: center;
+}
+
+.emsHeroMedia img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.emsHeroContent{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  background: rgba(255,255,255,.03);
+  display: grid;
+  align-content: center;
+  text-align: center;
+}
+
+.emsHeroText{
+  margin: 10px auto 0;
+  max-width: 60ch;
+  color: var(--text);
+}
+
+.emsHeroCtas{
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Staff grid */
+.emsGrid{
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+/* 2 columns tablet, 3 columns desktop (6 items total looks good) */
+@media (min-width: 700px){
+  .emsGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1050px){
+  .emsGrid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.emsPerson{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(255,255,255,.03);
+  display: grid;
+}
+
+.emsPhoto{
+  width: 100%;
+  height: 190px;
+  background: rgba(255,255,255,.04);
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.emsPhoto img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.emsBody{
+  padding: 12px 12px 14px;
+}
+
+.emsName{
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.emsTitle{
+  margin: 4px 0 10px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.emsMeta{
+  display: grid;
+  gap: 6px;
+}
+
+.emsMeta a,
+.emsMeta span{
+  color: var(--text);
+  text-decoration: none;
+}
+
+.emsMeta a:hover{
+  text-decoration: underline;
+}
+
+/* Ensure focus ring visibility (base.css likely already does this) */
+.emsMeta a:focus-visible{
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
