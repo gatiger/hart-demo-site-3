@@ -151,6 +151,7 @@
 .pwPersonWide{
   display: grid;
   grid-template-columns: 1fr; /* mobile: stacked */
+  grid-column: 1 / -1; /* span full width of staff grid */
 }
 
 .pwLeft{
@@ -171,7 +172,7 @@
 
 @media (min-width: 900px){
   .pwPersonWide{
-    grid-template-columns: 340px 1fr; /* left panel fixed-ish, bio flexible */
+    grid-template-columns: 340px minmax(0,1fr); /* left panel fixed-ish, bio flexible */
     align-items: stretch;
   }
 
