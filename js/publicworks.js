@@ -123,21 +123,36 @@ function staffCard(p){
   const phoneLine = phone ? `<div><a href="tel:${telHref(phone)}">${escapeHtml(phone)}</a></div>` : "";
   const faxLine   = fax ? `<div>Fax: ${escapeHtml(fax)}</div>` : "";
   const metaBlock = (phone || fax) ? `<div class="pwMeta">${phoneLine}${faxLine}</div>` : "";
+  
+  const bio = Array.isArray(p.bio) ? p.bio : (p.bio ? [p.bio] : []);
+  const bioHtml = bio
+   .map(x => safeText(x))
+   .filter(Boolean)
+   .map(x => `<p>${escapeHtml(x)}</p>`)
+   .join("");
 
   return `
-    <article class="pwPerson">
+  <article class="pwPerson pwPersonWide">
+    <div class="pwLeft">
       <div class="pwPhoto">
-        ${imgSrc ? `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(imgAlt)}" loading="lazy">`
-                : `<div class="muted">Add photo.src</div>`}
+        ${imgSrc
+          ? `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(imgAlt)}" loading="lazy">`
+          : `<div class="muted">Add photo.src</div>`}
       </div>
+
       <div class="pwBody">
         <h3 class="pwName">${escapeHtml(name)}</h3>
         ${title ? `<div class="pwTitle">${escapeHtml(title)}</div>` : `<div class="pwTitle muted"></div>`}
         ${metaBlock}
         ${info ? `<div class="pwInfo">${escapeHtml(info)}</div>` : ``}
       </div>
-    </article>
-  `;
+    </div>
+
+    <div class="pwBio" aria-label="Bio">
+      ${bioHtml ? bioHtml : `<div class="muted"> </div>`}
+    </div>
+  </article>
+`;
 }
 
 function injectImg(holder, src, alt){
