@@ -1,0 +1,58 @@
+{
+  "subtitle": "Roads, maintenance, and essential services that keep Hart County moving.",
+
+  "hero": {
+    "title": "Hart County Public Works",
+    "address": {
+      "street": "123 Public Works Way",
+      "city": "Hartwell",
+      "state": "GA",
+      "zip": "30643"
+    },
+    "leftImage": {
+      "src": "/assets/publicworks/left.jpg",
+      "alt": "Public Works equipment"
+    },
+    "rightImage": {
+      "src": "/assets/publicworks/right.jpg",
+      "alt": "County road maintenance"
+    },
+    "buttons": [
+      { "label": "Report a Road Issue", "href": "contact.html", "variant": "primary", "enabled": true },
+      { "label": "Service Directory", "href": "directory.html", "variant": "ghost", "enabled": true },
+      { "label": "After Hours (Demo)", "href": "tel:+17065551234", "variant": "ghost", "enabled": true }
+    ]
+  },
+
+  "about": {
+    "title": "What Public Works Does",
+    "text": "Public Works supports county infrastructure through roadway maintenance, debris removal, drainage improvements, signage, and seasonal response operations."
+  },
+
+  "services": {
+    "subtitle": "Common requests and responsibilities.",
+    "items": [
+      { "enabled": true, "title": "Road Maintenance", "text": "Patching, grading, and maintaining county roads." },
+      { "enabled": true, "title": "Drainage", "text": "Culverts, ditches, and stormwater flow improvements." },
+      { "enabled": true, "title": "Debris & Cleanup", "text": "Right-of-way cleanup and debris response." },
+      { "enabled": true, "title": "Signage", "text": "Install and maintain traffic and road signage." },
+      { "enabled": true, "title": "Seasonal Operations", "text": "Emergency response support and seasonal readiness." },
+      { "enabled": true, "title": "Facilities Support (Demo)", "text": "Support for county maintenance needs (demo content)." }
+    ]
+  },
+
+  "staff": {
+    "subtitle": "Tap a phone number to call from a mobile device.",
+    "people": [
+      {
+        "enabled": true,
+        "name": "Jane Doe",
+        "title": "Director",
+        "phone": "(706) 555-0201",
+        "fax": "(706) 555-0299",
+        "info": "Office hours: Mon–Fri, 8:00 AM – 5:00 PM.",
+        "photo": { "src": "/assets/publicworks/staff1.jpg", "alt": "Portrait of Jane Doe" }
+      }
+    ]
+  }
+}
