@@ -582,6 +582,20 @@ const currentPath = window.location.pathname.split("/").pop() || "index.html";
     }
   });
 
+  // Hide optional nav links unless on their page
+document.querySelectorAll(".navOptional").forEach(link => {
+  const href = link.getAttribute("href");
+  if (!href) return;
+
+  const shouldShow = href === currentPath;
+
+  if (!shouldShow) {
+    link.style.display = "none";
+    link.setAttribute("aria-hidden", "true");
+    link.tabIndex = -1;
+  }
+});
+
   // Use relative paths (plays nicer on a county server subfolder)
   const site = await loadJSON("./content/site.json");
   const alerts = await loadJSON("./content/alerts.json");
