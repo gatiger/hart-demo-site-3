@@ -1,0 +1,144 @@
+.pageHead{ margin: 18px 0 14px; }
+.pageTitle{ margin: 0 0 6px; }
+.pageSub{ margin: 0; color: var(--muted); }
+
+/* HERO */
+.pwHeroGrid{
+  display: grid;
+  gap: 14px;
+  align-items: stretch;
+}
+@media (min-width: 900px){
+  .pwHeroGrid{ grid-template-columns: 1fr 1.4fr 1fr; gap: 16px; }
+}
+
+.pwHeroMedia{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 160px;
+  background: rgba(255,255,255,.04);
+  display: grid;
+  place-items: center;
+}
+.pwHeroMedia img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* change to contain for logos */
+  display: block;
+}
+
+.pwHeroContent{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  background: rgba(255,255,255,.03);
+  display: grid;
+  align-content: center;
+  text-align: center;
+}
+
+.pwHeroAddress{
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+  color: var(--muted);
+}
+#pwCityStateZip{ white-space: nowrap; }
+
+.pwHeroCtas{
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ABOUT */
+.pwAbout{ padding: 18px 16px; }
+.pwAboutInner{
+  max-width: 70ch;
+  margin: 0 auto;
+  text-align: center;
+}
+.pwAboutText{
+  margin: 10px 0 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* SERVICES */
+.pwServicesGrid{
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (min-width: 800px){
+  .pwServicesGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1100px){
+  .pwServicesGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.pwService{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.03);
+  padding: 14px;
+}
+.pwService h3{
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+.pwService p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* STAFF */
+.pwStaffGrid{
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+@media (min-width: 700px){
+  .pwStaffGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1050px){
+  .pwStaffGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.pwPerson{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(255,255,255,.03);
+  display: flex;
+  flex-direction: column;
+}
+.pwPhoto{
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: rgba(255,255,255,.05);
+}
+.pwPhoto img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pwBody{
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+.pwName{ margin: 0; font-weight: 700; font-size: 16px; }
+.pwTitle{ margin: 0; color: var(--muted); font-size: 14px; }
+.pwMeta{ margin-top: 6px; display: flex; flex-direction: column; gap: 4px; }
+.pwInfo{ margin-top: 8px; font-size: 14px; color: var(--muted); line-height: 1.4; }
