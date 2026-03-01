@@ -49,13 +49,14 @@
     "people": [
       {
         "enabled": true,
-        "name": "Jane Doe",
+        "name": "Jason Spencer",
         "title": "Director",
-        "phone": "(706) 555-0201",
+        "phone": "(706) 376-0000",
         "fax": "(706) 555-0299",
-        "info": "Office hours: Mon–Fri, 8:00 AM – 5:00 PM.",
-        "photo": { "src": "/assets/publicworks/staff1.jpg", "alt": "Portrait of Jane Doe" }
+        "info": "Office hours: Mon–Fri, 8:30 AM – 5:00 PM.",
+        "photo": { "src": "/assets/jason_spencer.png", "alt": "Portrait of Jason Spencer" }
       }
     ]
   }
+
 }
