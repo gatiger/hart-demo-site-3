@@ -71,7 +71,13 @@ function renderAbout(about){
   const titleEl = document.getElementById("pwAboutTitle");
   const textEl  = document.getElementById("pwAboutText");
   if(titleEl) titleEl.textContent = safeText(about.title) || "What Public Works Does";
-  if(textEl)  textEl.textContent  = safeText(about.text) || "";
+  if(textEl){
+  const lines = Array.isArray(about.text) ? about.text : [about.text];
+  textEl.innerHTML = lines
+    .filter(Boolean)
+    .map(p => `<p>${escapeHtml(safeText(p))}</p>`)
+    .join("");
+}
 }
 
 function renderServices(services){
