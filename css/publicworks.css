@@ -69,6 +69,10 @@
   line-height: 1.6;
 }
 
+.pwAboutText p{
+  margin: 0 0 14px;
+}
+
 /* SERVICES */
 .pwServicesGrid{
   display: grid;
