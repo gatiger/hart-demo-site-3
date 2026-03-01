@@ -180,4 +180,9 @@
     border-top: 0;
     border-left: 1px solid var(--border);
   }
+
+  .pwBio p {
+  text-indent: 24px;
+}
+
 }
