@@ -174,9 +174,12 @@ function renderDirectory(items) {
         ${displayTitle}
         ${titleHref.startsWith("http") ? `
           <span class="extIcon" aria-hidden="true">
-            ↗
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" focusable="false">
+              <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"/>
+              <path d="M5 5h6v2H7v10h10v-4h2v6H5z"/>
+            </svg>
           </span>
-          <span class="sr-only"> (opens in a new tab)</span>
+          <span class="sr-only">(opens in a new tab)</span>
         ` : ""}
      </a>`
   : displayTitle
