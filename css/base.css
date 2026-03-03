@@ -1060,3 +1060,14 @@ select:focus-visible{
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+/* Directory: underline linked titles */
+.itemTitle .title-link{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Optional: slightly stronger hover */
+.itemTitle .title-link:hover{
+  text-decoration-thickness: 2px;
+}
