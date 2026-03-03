@@ -1069,7 +1069,8 @@ select:focus-visible{
   white-space:nowrap; border:0;
 }
 
-.external-link{
+/* All linked directory titles are visibly links */
+.itemTitle .title-link{
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -1080,12 +1081,14 @@ select:focus-visible{
   opacity: 0.75;
 }
 
-.external-link:hover .extIcon{
-  opacity: 1;
+/* Stronger hover feedback */
+.itemTitle .title-link:hover{
+  text-decoration-thickness: 2px;
 }
 
+/* WCAG keyboard focus */
 .itemTitle .title-link:focus-visible{
   outline: 3px solid var(--focus, #fff);
   outline-offset: 3px;
   border-radius: 8px;
-}
+}}
