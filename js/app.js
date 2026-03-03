@@ -169,10 +169,15 @@ function renderDirectory(items) {
             <h3 class="itemTitle">
               ${titleHref
   ? `<a href="${titleHref}"
-        class="title-link"
+        class="title-link ${titleHref.startsWith("http") ? "external-link" : ""}"
         ${titleHref.startsWith("http") ? 'target="_blank" rel="noopener noreferrer"' : ""}>
         ${displayTitle}
-        ${titleHref.startsWith("http") ? '<span class="sr-only"> (opens in a new tab)</span>' : ""}
+        ${titleHref.startsWith("http") ? `
+          <span class="extIcon" aria-hidden="true">
+            ↗
+          </span>
+          <span class="sr-only"> (opens in a new tab)</span>
+        ` : ""}
      </a>`
   : displayTitle
 }
