@@ -1,0 +1,61 @@
+/* =========================
+   Accessibility page layout
+   "Official county" style
+   ========================= */
+
+#accessibilityContent .pageHead{
+  text-align: center;
+}
+
+#accessibilityContent .pageTitle{
+  margin-bottom: 6px;
+}
+
+#accessibilityContent .pageSub{
+  margin: 0 auto;
+  max-width: 78ch;
+}
+
+/* Make cards feel like a structured statement */
+#accessibilityContent .card{
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Constrain text width for readability */
+#accessibilityContent .prose{
+  max-width: 78ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* official sites usually keep body text left-aligned */
+}
+
+/* Center just headings for a formal look */
+#accessibilityContent .cardTitle{
+  text-align: center;
+}
+
+/* Clean paragraph rhythm */
+#accessibilityContent .prose p{
+  margin: 0 0 14px;
+  line-height: 1.65;
+}
+
+/* Lists: clear, not too wide */
+#accessibilityContent .prose ul{
+  margin: 0 0 14px 20px;
+  line-height: 1.6;
+}
+
+/* Subheadings in the contact section (if you have h3) */
+#accessibilityContent .prose h3{
+  margin: 18px 0 10px;
+  font-size: 16px;
+}
+
+/* Optional: make the "Need help" / contact card stand out slightly */
+#accessibilityContent .card:last-child{
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.05);
+}
