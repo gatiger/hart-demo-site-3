@@ -306,20 +306,6 @@ main{ scroll-margin-top: 140px; }
   }
 }
 
-/* Mobile menu button styling */
-.menuBtn{
-  background:#ffffff;
-  color:#1f2a3a;
-  border:1px solid rgba(0,0,0,.15);
-  padding:8px 14px;
-  border-radius:10px;
-  font-weight:600;
-}
-
-.menuBtn:hover{
-  background:#eef3fa;
-}
-
 .menuBtn:focus-visible{
   outline:3px solid #ffffff;
   outline-offset:2px;
@@ -753,6 +739,25 @@ button:disabled,
   cursor:not-allowed;
 }
 
+/* Force menu button styling over generic .btn */
+.btn.menuBtn{
+  background: #ffffff !important;
+  color: #1f2a3a !important;
+  border: 1px solid rgba(0,0,0,.18) !important;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.btn.menuBtn:hover{
+  background: #eef3fa !important;
+  color: #1f2a3a !important;
+}
+
+.btn.menuBtn:focus-visible{
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
 .field{
   width:100%;
   padding: 12px 12px;
