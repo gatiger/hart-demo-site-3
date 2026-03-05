@@ -1061,45 +1061,19 @@ select:focus-visible{
   word-break: break-word;
 }
 
-.sr-only{
-  position:absolute !important;
-  width:1px; height:1px;
-  padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0);
-  white-space:nowrap; border:0;
+.prose{
+  max-width: 80ch;
 }
 
-/* All linked directory titles are visibly links */
-.itemTitle .title-link{
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.prose p{
+  margin: 0 0 14px;
+  line-height: 1.6;
 }
 
-.external-link .extIcon{
-  display: inline-flex;
-  align-items: center;
-  margin-left: 6px;
-  opacity: 0.75;
-  vertical-align: text-bottom;
+.prose ul{
+  margin: 0 0 14px 20px;
 }
 
-.external-link:hover .extIcon{
-  opacity: 1;
+.prose h3{
+  margin: 18px 0 8px;
 }
-
-.external-link svg{
-  width: 14px;
-  height: 14px;
-}
-
-/* Stronger hover feedback */
-.itemTitle .title-link:hover{
-  text-decoration-thickness: 2px;
-}
-
-/* WCAG keyboard focus */
-.itemTitle .title-link:focus-visible{
-  outline: 3px solid var(--focus, #fff);
-  outline-offset: 3px;
-  border-radius: 8px;
-}}
