@@ -301,25 +301,28 @@ main{ scroll-margin-top: 140px; }
   .btn.menuBtn{
     display:inline-flex !important;
     position:absolute;
-    right: 18px;
-    top: 16px;
+    right:18px;
+    top:16px;
   }
 }
 
-/* Optional: prevent page scrolling behind open menu */
-body.menuOpen{ overflow: hidden; }
+/* Mobile menu button styling */
+.menuBtn{
+  background:#ffffff;
+  color:#1f2a3a;
+  border:1px solid rgba(0,0,0,.15);
+  padding:8px 14px;
+  border-radius:10px;
+  font-weight:600;
+}
 
-/* When zoomed / narrow: show Menu button, hide top nav */
-@media (max-width: 1200px){
-  .topNav{ display:none; }
+.menuBtn:hover{
+  background:#eef3fa;
+}
 
-  /* show menu button and pin it top-right */
-  .btn.menuBtn{
-    display:inline-flex !important;
-    position:absolute;
-    right: 18px;
-    top: 16px;
-  }
+.menuBtn:focus-visible{
+  outline:3px solid #ffffff;
+  outline-offset:2px;
 }
 
 /* =========================
