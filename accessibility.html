@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessibility | Hart County</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/alerts.css" />
+
+  <!-- Global scripts -->
+  <script defer src="js/alerts.js"></script>
+  <script defer src="js/app.js"></script>
+
+  <!-- Page script (loads /content/accessibility.json) -->
+  <script defer src="js/accessibility.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="navRow">
+      <a class="brand brandLink" href="index.html">
+        <div class="seal">
+          <img src="./assets/hart_seal.svg" alt="Hart County, Georgia official seal">
+        </div>
+        <div class="brandText">
+          <div class="kicker">Hart County, Georgia</div>
+          <div class="title">Accessibility</div>
+        </div>
+      </a>
+
+      <nav class="topNav" aria-label="Primary">
+        <a href="directory.html">Directory</a>
+        <a href="commissioners.html">Commissioners</a>
+        <a href="employment.html">Employment</a>
+        <a href="about.html">About</a>
+        <a href="paynes-creek.html">Paynes Creek</a>
+        <a href="news.html">News</a>
+        <a href="meetings.html">Meetings</a>
+
+        <!-- Optional links (show only on their pages if you’re using navOptional) -->
+        <a href="ems.html" class="navOptional">EMS</a>
+        <a href="publicworks.html">Public Works</a>
+
+        <a href="accessibility.html">Accessibility</a>
+      </nav>
+
+      <button class="btn menuBtn" type="button"
+              aria-controls="mobileMenu"
+              aria-expanded="false"
+              id="menuBtn">
+        Menu
+      </button>
+    </div>
+  </header>
+
+  <div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+  <aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+    <div class="menuPanelHead">
+      <div class="menuPanelTitle">Menu</div>
+      <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+    </div>
+
+    <nav class="menuNav" aria-label="Primary mobile">
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About Hart County</a>
+      <a href="paynes-creek.html">Paynes Creek Campground</a>
+      <hr>
+      <a href="news.html">News</a>
+      <a href="meetings.html">Meetings</a>
+
+      <a href="ems.html" class="navOptional">EMS</a>
+      <a href="publicworks.html">Public Works</a>
+
+      <a href="accessibility.html">Accessibility</a>
+    </nav>
+  </aside>
+
+  <main id="main" class="container" tabindex="-1">
+    <!-- Alerts mount (styled by alerts.css) -->
+    <div id="alertHolder" aria-live="polite"></div>
+
+    <!-- accessibility.js injects content here from /content/accessibility.json -->
+    <div id="accessibilityContent"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footerInner">
+      <span>© Hart County, Georgia</span>
+      <span class="sep">•</span>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
+  </footer>
+</body>
+</html>
