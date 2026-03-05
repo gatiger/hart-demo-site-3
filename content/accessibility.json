@@ -1,0 +1,63 @@
+{
+  "title": "Accessibility Statement",
+  "subtitle": "Hart County is committed to providing an accessible website for all users.",
+
+  "sections": [
+    {
+      "title": "Commitment to accessibility",
+      "paragraphs": [
+        "Hart County is committed to ensuring that our website is accessible to all users, including individuals with disabilities.",
+        "Our goal is to meet or exceed the accessibility standards outlined in the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA wherever possible."
+      ]
+    },
+
+    {
+      "title": "Accessibility features",
+      "list": [
+        "Keyboard-navigable menus and controls",
+        "Visible focus indicators for keyboard users",
+        "Alternative text descriptions for images and non-text content",
+        "Sufficient color contrast for readability",
+        "Responsive design for mobile devices and tablets",
+        "Proper heading structure to support screen readers",
+        "Links and navigation elements that are clearly identifiable"
+      ]
+    },
+
+    {
+      "title": "Ongoing improvements",
+      "paragraphs": [
+        "Accessibility is an ongoing effort. Hart County continually works to improve the usability and accessibility of our website as technology and standards evolve.",
+        "While we strive to ensure that all content is accessible, some older documents or third-party content may not yet fully meet accessibility standards."
+      ]
+    },
+
+    {
+      "title": "External websites",
+      "paragraphs": [
+        "This website may link to external websites operated by other government agencies, organizations, or private entities.",
+        "Hart County does not control the accessibility of external sites and cannot guarantee their accessibility compliance."
+      ]
+    },
+
+    {
+      "title": "Need assistance or found an issue?",
+      "paragraphs": [
+        "If you experience difficulty accessing any content on the Hart County website or need assistance with any part of our site, please contact us.",
+        "When reporting an accessibility issue, please include the web page address (URL), a description of the problem, and the type of assistive technology you were using if applicable."
+      ]
+    }
+  ],
+
+  "contact": {
+    "title": "Contact information",
+    "name": "Hart County Administration",
+    "street": "800 Chandler Street",
+    "city": "Hartwell",
+    "state": "GA",
+    "zip": "30643",
+    "phone": "(706) 376-2024"
+  },
+
+  "lastUpdated": "February 28, 2026"
+}
