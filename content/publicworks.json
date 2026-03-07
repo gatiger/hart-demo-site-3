@@ -10,7 +10,7 @@
       "zip": "30643"
     },
     "leftImage": {
-      "src": "/assets/publicworks/left.jpg",
+      "src": "/assets/pwrebuiltloader.gif",
       "alt": "Public Works equipment"
     },
     "rightImage": {
@@ -65,3 +65,4 @@
 }
 
 }
+
