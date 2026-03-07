@@ -14,7 +14,7 @@
       "alt": "Public Works equipment"
     },
     "rightImage": {
-      "src": "/assets/publicworks/right.jpg",
+      "src": "/assets/culvert.jpg",
       "alt": "County road maintenance"
     },
     "buttons": [
@@ -65,4 +65,5 @@
 }
 
 }
+
 
