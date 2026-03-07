@@ -11,11 +11,11 @@
 	},
 
     "leftImage": {
-      "src": "assets/ems_logo.svg",
+      "src": "assets/ems/ems_logo.svg",
       "alt": "Hart County EMS logo"
     },
     "rightImage": {
-      "src": "assets/ems_text.svg",
+      "src": "assets/ems/ems_text.svg",
       "alt": "Ambulance outside the station"
     },
 
@@ -59,7 +59,7 @@
         "phone": "(706) 856-5314",
         "fax": "(706) 376-3974",
         "photo": {
-          "src": "./assets/mike_adams.png",
+          "src": "./assets/ems/mike_adams.png",
           "alt": "Portrait of Mike Adams"
         }
       },
@@ -68,7 +68,7 @@
         "name": "Tony Jordan",
         "title": "Operations Manager",
         "photo": {
-          "src": "/assets/tony_jordan.png",
+          "src": "/assets/ems/tony_jordan.png",
           "alt": "Portrait of Tony Jordan"
         }
       },
@@ -80,7 +80,7 @@
         "fax": "(706) 376-3974",
 		  "info": "Please contact for billing questions.",
         "photo": {
-          "src": "/assets/april_clem.jpg",
+          "src": "/assets/ems/april_clem.jpg",
           "alt": "Portrait of April Clem"
         }
       },
@@ -91,7 +91,7 @@
         "phone": "",
         "fax": "",
         "photo": {
-          "src": "/assets/ronald_dutton.jpg",
+          "src": "/assets/ems/ronald_dutton.jpg",
           "alt": "Portrait of Ronald Dutton"
         }
       },
@@ -102,7 +102,7 @@
         "phone": "",
         "fax": "",
         "photo": {
-          "src": "/assets/jess_eaton.png",
+          "src": "/assets/ems/jess_eaton.png",
           "alt": "Portrait of Jess Eaton"
         }
       },
@@ -113,7 +113,7 @@
         "phone": "",
         "fax": "",
         "photo": {
-          "src": "/assets/forrest_briggs.png",
+          "src": "/assets/ems/forrest_briggs.png",
           "alt": "Portrait of Forrest Briggs"
         }
       }
